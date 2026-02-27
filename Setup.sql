@@ -11,7 +11,9 @@ CREATE TABLE `Account`
     Email        VARCHAR(50) NOT NULL,
     RegisterDate DATE        NOT NULL,
     LoginTime    DATETIME    NOT NULL,
-    PRIMARY KEY (AccountID)
+    Password     VARCHAR(16) NOT NULL,
+    PRIMARY KEY (AccountID),
+    CONSTRAINT CHK_PasswordLength CHECK (LENGTH(Password) >= 8)
 );
 
 CREATE TABLE `Combo`
