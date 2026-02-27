@@ -9,9 +9,10 @@ CREATE TABLE `Account`
     FirstName    VARCHAR(50) NOT NULL,
     LastName     VARCHAR(50) NOT NULL,
     Email        VARCHAR(50) NOT NULL,
+    Password     VARCHAR(16) NOT NULL,
+    Salt         VARCHAR(15) NOT NULL GENERATED ALWAYS AS (AccountID),
     RegisterDate DATE        NOT NULL,
     LoginTime    DATETIME    NOT NULL,
-    Password     VARCHAR(16) NOT NULL,
     PRIMARY KEY (AccountID),
     CONSTRAINT CHK_PasswordLength CHECK (LENGTH(Password) >= 8)
 );
