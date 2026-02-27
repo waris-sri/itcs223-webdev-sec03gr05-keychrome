@@ -1,17 +1,18 @@
 USE `Keychrome`;
 
 -- 1. Insert into Account (10 records)
-INSERT INTO `Account` (AccountID, FirstName, LastName, Email, RegisterDate, LoginTime)
-VALUES ('A001', 'Warawuth', 'Ngamluea', 'warawuth@mu.edu', '2025-10-01', '2026-02-24 10:15:00'),
-       ('A002', 'Bobby', 'Bloom', 'bobby.bloom@mail.com', '2025-11-15', '2026-02-23 18:30:00'),
-       ('A003', 'Alice', 'Smith', 'alice.smith@gmail.com', '2025-12-05', '2026-02-20 09:45:00'),
-       ('A004', 'John', 'Doe', 'jdoe99@yahoo.com', '2026-01-10', '2026-02-24 08:00:00'),
-       ('A005', 'Emma', 'Watson', 'emma.w@outlook.com', '2026-01-22', '2026-02-21 14:20:00'),
-       ('A006', 'Lucas', 'Muller', 'lmuller@bscc.de', '2026-02-01', '2026-02-24 11:10:00'),
-       ('A007', 'Sophia', 'Chen', 'schen.dev@gmail.com', '2026-02-10', '2026-02-22 16:55:00'),
-       ('A008', 'Liam', 'Johnson', 'liam.j@hotmail.com', '2026-02-14', '2026-02-24 07:30:00'),
-       ('A009', 'Olivia', 'Davis', 'olivia.davis@gmail.com', '2026-02-18', '2026-02-23 20:10:00'),
-       ('A010', 'Noah', 'Martinez', 'nmartinez@yahoo.com', '2026-02-20', '2026-02-24 09:05:00');
+INSERT INTO `Account` (AccountID, FirstName, LastName, Email, Salt, Password, RegisterDate, LoginTime)
+VALUES
+('A001', 'Warawuth', 'Ngamluea', 'warawuth@mu.edu', 'A001', SHA2(CONCAT('A001', 'RBnPPEqv4Bi045i9'), 256), '2025-10-01', '2026-02-24 10:15:00'),
+('A002', 'Bobby', 'Bloom', 'bobby.bloom@mail.com',   'A002', SHA2(CONCAT('A002', 'BK0Sz1jsjmfX5o88'), 256), '2025-11-15', '2026-02-23 18:30:00'),
+('A003', 'Alice', 'Smith', 'alice.smith@gmail.com',  'A003', SHA2(CONCAT('A003', 'g4HZY7m4Ot4HaiXE'), 256), '2025-12-05', '2026-02-20 09:45:00'),
+('A004', 'John', 'Doe', 'jdoe99@yahoo.com',          'A004', SHA2(CONCAT('A004', '186GsOs0fGT0XNZl'), 256), '2026-01-10', '2026-02-24 08:00:00'),
+('A005', 'Emma', 'Watson', 'emma.w@outlook.com',     'A005', SHA2(CONCAT('A005', 'd8pE7dy1buDo43dv'), 256), '2026-01-22', '2026-02-21 14:20:00'),
+('A006', 'Lucas', 'Muller', 'lmuller@bscc.de',       'A006', SHA2(CONCAT('A006', 'gYY45FLQkM3Kz0H6'), 256), '2026-02-01', '2026-02-24 11:10:00'),
+('A007', 'Sophia', 'Chen', 'schen.dev@gmail.com',    'A007', SHA2(CONCAT('A007', 'BIYc71kvfm9XV5XM'), 256), '2026-02-10', '2026-02-22 16:55:00'),
+('A008', 'Liam', 'Johnson', 'liam.j@hotmail.com',    'A008', SHA2(CONCAT('A008', 'rO03hx9nrbq66E0s'), 256), '2026-02-14', '2026-02-24 07:30:00'),
+('A009', 'Olivia', 'Davis', 'olivia.davis@gmail.com','A009', SHA2(CONCAT('A009', 'pB8NI1C9QuWj4EdG'), 256), '2026-02-18', '2026-02-23 20:10:00'),
+('A010', 'Noah', 'Martinez', 'nmartinez@yahoo.com',  'A010', SHA2(CONCAT('A010', 'pYjZk2km4V81AA4t'), 256), '2026-02-20', '2026-02-24 09:05:00');
 
 -- 2. Insert into Combo (10 records)
 INSERT INTO `Combo` (ComboID, Price)
