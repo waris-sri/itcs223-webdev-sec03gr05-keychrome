@@ -1,105 +1,96 @@
 USE `Keychrome`;
 
 -- 1. Insert into Account (10 records)
-INSERT INTO `Account` (AccountID, FirstName, LastName, Email, RegisterDate, LoginTime)
-VALUES ('A001', 'Warawuth', 'Ngamluea', 'warawuth@mu.edu', '2025-10-01', '2026-02-24 10:15:00'),
-       ('A002', 'Bobby', 'Bloom', 'bobby.bloom@mail.com', '2025-11-15', '2026-02-23 18:30:00'),
-       ('A003', 'Alice', 'Smith', 'alice.smith@gmail.com', '2025-12-05', '2026-02-20 09:45:00'),
-       ('A004', 'John', 'Doe', 'jdoe99@yahoo.com', '2026-01-10', '2026-02-24 08:00:00'),
-       ('A005', 'Emma', 'Watson', 'emma.w@outlook.com', '2026-01-22', '2026-02-21 14:20:00'),
-       ('A006', 'Lucas', 'Muller', 'lmuller@bscc.de', '2026-02-01', '2026-02-24 11:10:00'),
-       ('A007', 'Sophia', 'Chen', 'schen.dev@gmail.com', '2026-02-10', '2026-02-22 16:55:00'),
-       ('A008', 'Liam', 'Johnson', 'liam.j@hotmail.com', '2026-02-14', '2026-02-24 07:30:00'),
-       ('A009', 'Olivia', 'Davis', 'olivia.davis@gmail.com', '2026-02-18', '2026-02-23 20:10:00'),
-       ('A010', 'Noah', 'Martinez', 'nmartinez@yahoo.com', '2026-02-20', '2026-02-24 09:05:00');
+-- Note: 'Salt' is generated automatically, so it is excluded from the INSERT statement.
+INSERT INTO `Account` (AccountID, FirstName, LastName, Email, Password, RegisterDate, LoginTime)
+VALUES ('A001', 'Warawuth', 'Ngamluea', 'warawuth@mu.edu', 'Passw0rd123!', '2025-10-01', '2026-02-28 10:15:00'),
+       ('A002', 'Bobby', 'Bloom', 'bobby.b@mail.com', 'M1necr@ftF@n', '2025-11-15', '2026-02-28 12:30:00'),
+       ('A003', 'Alice', 'Smith', 'alice.smith@gmail.com', 'S3cr3tP@ss', '2025-12-05', '2026-02-27 09:45:00'),
+       ('A004', 'John', 'Doe', 'jdoe99@yahoo.com', 'QwertyUIOP', '2026-01-10', '2026-02-28 08:00:00'),
+       ('A005', 'Emma', 'Watson', 'emma.w@outlook.com', 'Hogw@rts99', '2026-01-22', '2026-02-26 14:20:00'),
+       ('A006', 'Lucas', 'Muller', 'lmuller@bscc.de', 'Bremen2026!', '2026-02-01', '2026-02-28 11:10:00'),
+       ('A007', 'Sophia', 'Chen', 'schen.dev@gmail.com', 'C0d1ng!sFun', '2026-02-10', '2026-02-27 16:55:00'),
+       ('A008', 'Liam', 'Johnson', 'liam.j@hotmail.com', 'L!amJ0hnson', '2026-02-14', '2026-02-28 07:30:00'),
+       ('A009', 'Olivia', 'Davis', 'olivia.davis@gmail.com', '0liviaD@vis', '2026-02-18', '2026-02-25 20:10:00'),
+       ('A010', 'Noah', 'Martinez', 'nmartinez@yahoo.com', 'N0@hM@rt1nez', '2026-02-20', '2026-02-28 09:05:00');
 
--- 2. Insert into Combo (10 records)
+-- 2. Insert into Combo (5 records)
 INSERT INTO `Combo` (ComboID, Price)
 VALUES ('CB-PRO-01', 189.90),
        ('CB-STARTER', 129.50),
        ('CB-GAMER-X', 210.00),
        ('CB-OFFICE-1', 145.00),
-       ('CB-SILENT', 160.75),
-       ('CB-ERGO-01', 199.99),
-       ('CB-TRAVEL', 110.00),
-       ('CB-CUSTOM-A', 250.00),
-       ('CB-CUSTOM-B', 275.50),
        ('CB-LITE-01', 99.99);
 
--- 3. Insert into Product (15 records)
-INSERT INTO `Product` (SKU, Series, Description, AvailableStocks, Price, Type, Color, Sensor, SwitchType, Version,
-                       LayoutKeyboard, DiscountAvailable, NewArrival, ComboID, Rating)
-VALUES ('K1-PRO-RED', 'K Pro', 'Low profile wireless mechanical keyboard', 50, 99.00, 'Keyboard', 'Black', NULL,
-        'Gateron Red', 'V1', 'ANSI', TRUE, FALSE, NULL, 4.8),
-       ('Q1-MAX-WHT', 'Q Series', 'Premium custom aluminum keyboard', 25, 199.00, 'Keyboard', 'White', NULL,
-        'Kailh Box Brown', 'Max', 'ISO', FALSE, TRUE, 'CB-PRO-01', 4.9),
-       ('V1-CUSTOM', 'V Series', 'Wired custom mechanical keyboard', 100, 89.00, 'Keyboard', 'Carbon Black', NULL,
-        'Cherry MX Blue', 'V1', 'ANSI', TRUE, FALSE, 'CB-STARTER', 4.5),
-       ('M1-WL-MOUSE', 'M Series', 'Ultra-lightweight wireless mouse', 200, 49.00, 'Mouse', 'White', 'PixArt 3395',
-        'Huano', 'V2', NULL, FALSE, TRUE, 'CB-PRO-01', 4.7),
-       ('M2-ERGO', 'M Series', 'Ergonomic vertical wireless mouse', 75, 59.00, 'Mouse', 'Black', 'PixArt 3370', 'Omron',
-        'V1', NULL, TRUE, FALSE, 'CB-ERGO-01', 4.4),
-       ('SW-GAT-RED-35', 'Switches', 'Gateron G Pro Red switches (35 pcs)', 500, 15.00, 'Component', 'Red', NULL,
-        'Linear', 'Pro 2.0', NULL, FALSE, FALSE, NULL, 4.8),
-       ('SW-CHY-BRN-35', 'Switches', 'Cherry MX Brown switches (35 pcs)', 300, 18.50, 'Component', 'Brown', NULL,
-        'Tactile', 'Hyperglide', NULL, FALSE, FALSE, NULL, 4.6),
-       ('K3-LITE', 'K Series', 'Ultra-slim wireless keyboard', 80, 79.00, 'Keyboard', 'Grey', NULL, 'Low Profile Blue',
-        'V2', 'ANSI', TRUE, FALSE, 'CB-LITE-01', 4.3),
-       ('Q6-PRO-BARE', 'Q Series', '100% layout barebone keyboard kit', 15, 179.00, 'Barebone', 'Navy Blue', NULL, NULL,
-        'Pro', 'ANSI', FALSE, TRUE, 'CB-CUSTOM-A', 5.0),
-       ('DESKMAT-L-BLK', 'Accessories', 'Large smooth surface desk mat', 150, 25.00, 'Accessory', 'Black', NULL, NULL,
-        'V1', NULL, TRUE, FALSE, 'CB-STARTER', 4.9),
-       ('KC-PBT-WHT', 'Keycaps', 'Double-shot PBT keycap set', 120, 40.00, 'Component', 'White', NULL, NULL, 'OEM',
-        'ANSI/ISO', FALSE, FALSE, 'CB-CUSTOM-A', 4.7),
-       ('M3-MINI', 'M Series', 'Compact travel wireless mouse', 90, 39.00, 'Mouse', 'Silver', 'PixArt 3325',
-        'Kailh Mute', 'V1', NULL, TRUE, FALSE, 'CB-TRAVEL', 4.2),
-       ('K8-TENKEYLESS', 'K Series', 'TKL wireless mechanical keyboard', 60, 89.00, 'Keyboard', 'Black', NULL,
-        'Gateron Brown', 'V2', 'ANSI', FALSE, FALSE, NULL, 4.5),
-       ('CBL-COILED-BL', 'Accessories', 'Premium coiled aviator cable', 200, 35.00, 'Accessory', 'Blue', NULL, NULL,
-        'V1', NULL, FALSE, TRUE, NULL, 4.8),
-       ('Q0-NUMPAD', 'Q Series', 'Custom aluminum number pad', 40, 69.00, 'Keyboard', 'Silver', NULL, 'Kailh Box Red',
-        'V1', 'Numpad', FALSE, FALSE, 'CB-OFFICE-1', 4.6);
+-- 3. Insert into Image (12 records)
+INSERT INTO `Image` (ImageID, Source)
+VALUES ('IMG-K1-01', '/img/products/k1_pro_1.png'),
+       ('IMG-K1-02', '/img/products/k1_pro_2.png'),
+       ('IMG-Q1-01', '/img/products/q1_max_1.png'),
+       ('IMG-V1-01', '/img/products/v1_custom.png'),
+       ('IMG-M1-01', '/img/products/m1_mouse.png'),
+       ('IMG-M2-01', '/img/products/m2_ergo.png'),
+       ('IMG-SW-01', '/img/products/sw_red.png'),
+       ('IMG-SW-02', '/img/products/sw_brown.png'),
+       ('IMG-K3-01', '/img/products/k3_lite.png'),
+       ('IMG-MAT-01', '/img/products/deskmat.png'),
+       ('IMG-KC-01', '/img/products/keycap_wht.png'),
+       ('IMG-CBL-01', '/img/products/cable_bl.png');
 
--- 4. Insert into ShippingAddress (10 records)
-INSERT INTO `ShippingAddress` (AddressID, Region, HouseNumber, City, Province, PhoneNumber, AccountID)
-VALUES ('AD001', 'Central', '999/1', 'Salaya', 'Nakhon Pathom', '081-234-5678', 'A001'),
-       ('AD002', 'Central', '123/45', 'Bangkok', 'Bangkok', '089-876-5432', 'A002'),
-       ('AD003', 'North', '45', 'Chiang Mai', 'Chiang Mai', '053-111-2222', 'A003'),
-       ('AD004', 'South', '88/8', 'Phuket', 'Phuket', '076-999-8888', 'A004'),
-       ('AD005', 'East', '10', 'Pattaya', 'Chonburi', '038-444-5555', 'A005'),
-       ('AD006', 'Europe', '12A', 'Bremen', 'Bremen', '+49123456789', 'A006'),
-       ('AD007', 'West', '77', 'Hua Hin', 'Prachuap', '032-777-6666', 'A007'),
-       ('AD008', 'Northeast', '555', 'Korat', 'Nakhon Ratchas', '044-555-4444', 'A008'),
-       ('AD009', 'Central', '21/3', 'Nonthaburi', 'Nonthaburi', '02-333-4444', 'A009'),
-       ('AD010', 'Central', '101', 'Pathum Thani', 'Pathum Thani', '02-999-1111', 'A010');
+-- 4. Insert into Stocks (12 records)
+INSERT INTO `Stocks` (StockID, Color, Amount)
+VALUES ('STK-K1-BLK', 'Black', 150),
+       ('STK-Q1-WHT', 'White', 45),
+       ('STK-V1-CBN', 'Carbon Black', 200),
+       ('STK-M1-WHT', 'White', 300),
+       ('STK-M2-BLK', 'Black', 80),
+       ('STK-SW-RED', 'Red', 1000),
+       ('STK-SW-BRN', 'Brown', 850),
+       ('STK-K3-GRY', 'Grey', 120),
+       ('STK-MAT-BLK', 'Black', 400),
+       ('STK-KC-WHT', 'White', 60),
+       ('STK-CBL-BLU', 'Blue', 250),
+       ('STK-M3-SLV', 'Silver', 90);
 
--- 5. Insert into Order (10 records)
-INSERT INTO `Order` (OrderID, ShippingStatus, PaymentMethod, AccountID)
-VALUES ('ORD-26-001', 'Delivered', 'Credit Card', 'A001'),
-       ('ORD-26-002', 'Shipped', 'PayPal', 'A002'),
-       ('ORD-26-003', 'Processing', 'Bank Transfer', 'A003'),
-       ('ORD-26-004', 'Delivered', 'Credit Card', 'A004'),
-       ('ORD-26-005', 'Pending', 'PromptPay', 'A001'),
-       ('ORD-26-006', 'Shipped', 'Credit Card', 'A006'),
-       ('ORD-26-007', 'Processing', 'Debit Card', 'A007'),
-       ('ORD-26-008', 'Cancelled', 'PayPal', 'A008'),
-       ('ORD-26-009', 'Delivered', 'PromptPay', 'A009'),
-       ('ORD-26-010', 'Shipped', 'Credit Card', 'A010');
+-- 5. Insert into Product (12 records)
+INSERT INTO `Product` (SKU, Series, Description, Price, Type, Sensor, SwitchType, Switch, Version, LayoutVersion,
+                       DiscountAvailable, NewArrival, Rating, ComboID, ImageID, StockID)
+VALUES ('K1-PRO-RED', 'K Pro', 'Low profile wireless mechanical keyboard', 99.00, 'Keyboard', NULL, 'Linear',
+        'Gateron Red', 'V1', 'ANSI', TRUE, FALSE, 4.8, NULL, 'IMG-K1-01', 'STK-K1-BLK'),
+       ('Q1-MAX-WHT', 'Q Series', 'Premium custom aluminum keyboard', 199.00, 'Keyboard', NULL, 'Tactile',
+        'Kailh Box Brown', 'Max', 'ISO', FALSE, TRUE, 4.9, 'CB-PRO-01', 'IMG-Q1-01', 'STK-Q1-WHT'),
+       ('V1-CUSTOM', 'V Series', 'Wired custom mechanical keyboard', 89.00, 'Keyboard', NULL, 'Clicky',
+        'Cherry MX Blue', 'V1', 'ANSI', TRUE, FALSE, 4.5, 'CB-STARTER', 'IMG-V1-01', 'STK-V1-CBN'),
+       ('M1-WL-MOUSE', 'M Series', 'Ultra-lightweight wireless mouse', 49.00, 'Mouse', 'PixArt 3395', NULL, NULL, 'V2',
+        NULL, FALSE, TRUE, 4.7, 'CB-PRO-01', 'IMG-M1-01', 'STK-M1-WHT'),
+       ('M2-ERGO', 'M Series', 'Ergonomic vertical wireless mouse', 59.00, 'Mouse', 'PixArt 3370', NULL, NULL, 'V1',
+        NULL, TRUE, FALSE, 4.4, NULL, 'IMG-M2-01', 'STK-M2-BLK'),
+       ('SW-GAT-RED-35', 'Switches', 'Gateron G Pro Red switches (35 pcs)', 15.00, 'Component', NULL, 'Linear',
+        'Gateron Red', 'Pro 2.0', NULL, FALSE, FALSE, 4.8, NULL, 'IMG-SW-01', 'STK-SW-RED'),
+       ('SW-CHY-BRN-35', 'Switches', 'Cherry MX Brown switches (35 pcs)', 18.50, 'Component', NULL, 'Tactile',
+        'Cherry MX Brown', 'Hyperglide', NULL, FALSE, FALSE, 4.6, NULL, 'IMG-SW-02', 'STK-SW-BRN'),
+       ('K3-LITE', 'K Series', 'Ultra-slim wireless keyboard', 79.00, 'Keyboard', NULL, 'Clicky', 'Low Profile Blue',
+        'V2', 'ANSI', TRUE, FALSE, 4.3, 'CB-LITE-01', 'IMG-K3-01', 'STK-K3-GRY'),
+       ('DESKMAT-L-BLK', 'Accessories', 'Large smooth surface desk mat', 25.00, 'Accessory', NULL, NULL, NULL, 'V1',
+        NULL, TRUE, FALSE, 4.9, 'CB-STARTER', 'IMG-MAT-01', 'STK-MAT-BLK'),
+       ('KC-PBT-WHT', 'Keycaps', 'Double-shot PBT keycap set', 40.00, 'Component', NULL, NULL, NULL, 'OEM', 'ANSI/ISO',
+        FALSE, FALSE, 4.7, NULL, 'IMG-KC-01', 'STK-KC-WHT'),
+       ('CBL-COILED-BL', 'Accessories', 'Premium coiled aviator cable', 35.00, 'Accessory', NULL, NULL, NULL, 'V1',
+        NULL, FALSE, TRUE, 4.8, NULL, 'IMG-CBL-01', 'STK-CBL-BLU'),
+       ('Q0-NUMPAD', 'Q Series', 'Custom aluminum number pad', 69.00, 'Keyboard', NULL, 'Linear', 'Kailh Box Red', 'V1',
+        'Numpad', FALSE, FALSE, 4.6, 'CB-OFFICE-1', 'IMG-Q1-01', 'STK-Q1-WHT');
 
--- 6. Insert into AddToCart (12 records)
-INSERT INTO `AddToCart` (CartID, AddedDate, AccountID, SKU)
-VALUES ('CRT-001', '2026-02-22', 'A001', 'Q1-MAX-WHT'),
-       ('CRT-002', '2026-02-22', 'A001', 'M1-WL-MOUSE'),
-       ('CRT-003', '2026-02-23', 'A002', 'K1-PRO-RED'),
-       ('CRT-004', '2026-02-20', 'A003', 'V1-CUSTOM'),
-       ('CRT-005', '2026-02-24', 'A004', 'DESKMAT-L-BLK'),
-       ('CRT-006', '2026-02-24', 'A004', 'SW-GAT-RED-35'),
-       ('CRT-007', '2026-02-21', 'A005', 'M2-ERGO'),
-       ('CRT-008', '2026-02-24', 'A006', 'Q6-PRO-BARE'),
-       ('CRT-009', '2026-02-24', 'A006', 'KC-PBT-WHT'),
-       ('CRT-010', '2026-02-22', 'A007', 'K3-LITE'),
-       ('CRT-011', '2026-02-23', 'A008', 'M3-MINI'),
-       ('CRT-012', '2026-02-24', 'A010', 'Q0-NUMPAD');
-
+-- 6. Insert into Manage (10 records)
+INSERT INTO `Manage` (ManageID, ManageTime, ManageAction, AccountID, SKU)
+VALUES ('MNG-001', '2026-02-20', 'CREATE', 'A001', 'K1-PRO-RED'),
+       ('MNG-002', '2026-02-21', 'UPDATE', 'A001', 'K1-PRO-RED'),
+       ('MNG-003', '2026-02-22', 'CREATE', 'A002', 'Q1-MAX-WHT'),
+       ('MNG-004', '2026-02-23', 'RESTOCK', 'A003', 'SW-GAT-RED-35'),
+       ('MNG-005', '2026-02-24', 'CREATE', 'A004', 'M1-WL-MOUSE'),
+       ('MNG-006', '2026-02-25', 'RESTOCK', 'A001', 'V1-CUSTOM'),
+       ('MNG-007', '2026-02-26', 'UPDATE', 'A006', 'DESKMAT-L-BLK'),
+       ('MNG-008', '2026-02-27', 'CREATE', 'A007', 'KC-PBT-WHT'),
+       ('MNG-009', '2026-02-28', 'RESTOCK', 'A002', 'K3-LITE'),
+       ('MNG-010', '2026-02-28', 'UPDATE', 'A001', 'M1-WL-MOUSE');
 SELECT *
 FROM Product;
