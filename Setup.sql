@@ -44,7 +44,7 @@ CREATE TABLE `Product`
     Series            VARCHAR(15)   NOT NULL,
     Description       VARCHAR(500)  NOT NULL,
     Price             DECIMAL(7, 2) NOT NULL,
-    Type              VARCHAR(18)   NOT NULL,
+    Type              ENUM ('Custom Keyboards', 'Keycaps', 'Mice', 'Slim Keyboards', 'Switches', 'Wired Keyboards', 'Wireless Keyboard', 'Z-Others')   NOT NULL,
     Sensor            VARCHAR(20),
     SwitchType        VARCHAR(20),
     Switch            VARCHAR(20),
