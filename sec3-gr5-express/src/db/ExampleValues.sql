@@ -23,18 +23,18 @@ VALUES ('CB-PRO-01', 189.90),
 
 -- 3. Insert into Image (12 records)
 INSERT INTO `Image` (ImageID, Source)
-VALUES ('IMG-K1-01', '/img/products/k1_pro_1.png'),
-       ('IMG-Q1-01', '/img/products/q1_max_1.png'),
-       ('IMG-V1-01', '/img/products/v1_custom.png'),
-       ('IMG-M1-01', '/img/products/m1_mouse.png'),
-       ('IMG-M2-01', '/img/products/m2_ergo.png'),
-       ('IMG-SW-01', '/img/products/sw_red.png'),
-       ('IMG-SW-02', '/img/products/sw_brown.png'),
-       ('IMG-K3-01', '/img/products/k3_lite.png'),
-       ('IMG-MAT-01', '/img/products/deskmat.png'),
-       ('IMG-KC-01', '/img/products/keycap_wht.png'),
-       ('IMG-CBL-01', '/img/products/cable_bl.png'),
-       ('IMG-K8-01', '/img/products/k8_pro_wl.png');
+VALUES ('images-K1-01', '/images/products/k1_pro_1.png'),
+       ('images-Q1-01', '/images/products/q1_max_1.png'),
+       ('images-V1-01', '/images/products/v1_custom.png'),
+       ('images-M1-01', '/images/products/m1_mouse.png'),
+       ('images-M2-01', '/images/products/m2_ergo.png'),
+       ('images-SW-01', '/images/products/sw_red.png'),
+       ('images-SW-02', '/images/products/sw_brown.png'),
+       ('images-K3-01', '/images/products/k3_lite.png'),
+       ('images-MAT-01', '/images/products/deskmat.png'),
+       ('images-KC-01', '/images/products/keycap_wht.png'),
+       ('images-CBL-01', '/images/products/cable_bl.png'),
+       ('images-K8-01', '/images/products/k8_pro_wl.png');
 
 -- 4. Insert into Stocks (12 records)
 INSERT INTO `Stocks` (StockID, Color, Amount)
@@ -55,29 +55,29 @@ VALUES ('STK-K1-BLK', 'Black', 150),
 INSERT INTO `Product` (SKU, Series, Description, Price, Type, Sensor, SwitchType, Switch, Version, LayoutVersion,
                        DiscountAvailable, NewArrival, Rating, ComboID, ImageID, StockID)
 VALUES ('K1-PRO-RED', 'K Pro', 'Low profile wireless mechanical keyboard', 99.00, 'Slim Keyboards', NULL, 'Linear',
-        'Gateron Red', 'V1', 'ANSI', TRUE, FALSE, 4.8, NULL, 'IMG-K1-01', 'STK-K1-BLK'),
+        'Gateron Red', 'V1', 'ANSI', TRUE, FALSE, 4.8, NULL, 'images-K1-01', 'STK-K1-BLK'),
        ('Q1-MAX-WHT', 'Q Series', 'Premium custom aluminum keyboard', 199.00, 'Custom Keyboards', NULL, 'Tactile',
-        'Kailh Box Brown', 'Max', 'ISO', FALSE, TRUE, 4.9, 'CB-PRO-01', 'IMG-Q1-01', 'STK-Q1-WHT'),
+        'Kailh Box Brown', 'Max', 'ISO', FALSE, TRUE, 4.9, 'CB-PRO-01', 'images-Q1-01', 'STK-Q1-WHT'),
        ('V1-CUSTOM', 'V Series', 'Wired custom mechanical keyboard', 89.00, 'Wired Keyboards', NULL, 'Clicky',
-        'Cherry MX Blue', 'V1', 'ANSI', TRUE, FALSE, 4.5, 'CB-STARTER', 'IMG-V1-01', 'STK-V1-CBN'),
+        'Cherry MX Blue', 'V1', 'ANSI', TRUE, FALSE, 4.5, 'CB-STARTER', 'images-V1-01', 'STK-V1-CBN'),
        ('M1-WL-MOUSE', 'M Series', 'Ultra-lightweight wireless mouse', 49.00, 'Mice', 'PixArt 3395', NULL, NULL, 'V2',
-        NULL, FALSE, TRUE, 4.7, 'CB-PRO-01', 'IMG-M1-01', 'STK-M1-WHT'),
+        NULL, FALSE, TRUE, 4.7, 'CB-PRO-01', 'images-M1-01', 'STK-M1-WHT'),
        ('M2-ERGO', 'M Series', 'Ergonomic vertical wireless mouse', 59.00, 'Mice', 'PixArt 3370', NULL, NULL, 'V1',
-        NULL, TRUE, FALSE, 4.4, NULL, 'IMG-M2-01', 'STK-M2-BLK'),
+        NULL, TRUE, FALSE, 4.4, NULL, 'images-M2-01', 'STK-M2-BLK'),
        ('SW-GAT-RED-35', 'Switches', 'Gateron G Pro Red switches (35 pcs)', 15.00, 'Switches', NULL, 'Linear',
-        'Gateron Red', 'Pro 2.0', NULL, FALSE, FALSE, 4.8, NULL, 'IMG-SW-01', 'STK-SW-RED'),
+        'Gateron Red', 'Pro 2.0', NULL, FALSE, FALSE, 4.8, NULL, 'images-SW-01', 'STK-SW-RED'),
        ('SW-CHY-BRN-35', 'Switches', 'Cherry MX Brown switches (35 pcs)', 18.50, 'Switches', NULL, 'Tactile',
-        'Cherry MX Brown', 'Hyperglide', NULL, FALSE, FALSE, 4.6, NULL, 'IMG-SW-02', 'STK-SW-BRN'),
+        'Cherry MX Brown', 'Hyperglide', NULL, FALSE, FALSE, 4.6, NULL, 'images-SW-02', 'STK-SW-BRN'),
        ('K3-LITE', 'K Series', 'Ultra-slim wireless keyboard', 79.00, 'Slim Keyboards', NULL, 'Clicky',
-        'Low Profile Blue', 'V2', 'ANSI', TRUE, FALSE, 4.3, 'CB-LITE-01', 'IMG-K3-01', 'STK-K3-GRY'),
+        'Low Profile Blue', 'V2', 'ANSI', TRUE, FALSE, 4.3, 'CB-LITE-01', 'images-K3-01', 'STK-K3-GRY'),
        ('DESKMAT-L-BLK', 'Accessories', 'Large smooth surface desk mat', 25.00, 'Z-Others', NULL, NULL, NULL, 'V1',
-        NULL, TRUE, FALSE, 4.9, 'CB-STARTER', 'IMG-MAT-01', 'STK-MAT-BLK'),
+        NULL, TRUE, FALSE, 4.9, 'CB-STARTER', 'images-MAT-01', 'STK-MAT-BLK'),
        ('KC-PBT-WHT', 'Keycaps', 'Double-shot PBT keycap set', 40.00, 'Keycaps', NULL, NULL, NULL, 'OEM', 'ANSI/ISO',
-        FALSE, FALSE, 4.7, NULL, 'IMG-KC-01', 'STK-KC-WHT'),
+        FALSE, FALSE, 4.7, NULL, 'images-KC-01', 'STK-KC-WHT'),
        ('CBL-COILED-BL', 'Accessories', 'Premium coiled aviator cable', 35.00, 'Z-Others', NULL, NULL, NULL, 'V1', NULL,
-        FALSE, TRUE, 4.8, NULL, 'IMG-CBL-01', 'STK-CBL-BLU'),
+        FALSE, TRUE, 4.8, NULL, 'images-CBL-01', 'STK-CBL-BLU'),
        ('K8-PRO-WL', 'K Pro', 'Wireless TKL mechanical keyboard', 109.00, 'Wireless Keyboard', NULL, 'Tactile',
-        'Gateron Brown', 'V1', 'ANSI', FALSE, TRUE, 4.8, NULL, 'IMG-K8-01', 'STK-K8-BLK');
+        'Gateron Brown', 'V1', 'ANSI', FALSE, TRUE, 4.8, NULL, 'images-K8-01', 'STK-K8-BLK');
 
 -- 6. Insert into Manage (12 records)
 INSERT INTO `Manage` (ManageID, ManageTime, ManageAction, AccountID, SKU)
