@@ -11,20 +11,24 @@ const dbClient = new Client(process.env.SUPABASE_CONNECTION_STRING)
 dbClient.connect()
 
 router.get('/', (req, res) => {
-    res.send('Hello')
+    res.status(200).send('Hello')
 })
 
 router.get('/test-db', async (req, res) => {
     console.log(`Req: ${req.url}`)
     try {
         const result = await dbClient.query('SELECT * FROM account;')
-
-        res.send(result.rows)
+        res.status(200).send(result.rows)
     } catch
         (err) {
         console.error('Server error:', err)
         res.status(500).send('Something broke!')
     }
+})
+
+router.use((req, res) => {
+    console.log(`Req: ${req.url}`)
+    res.status(404).send('404: Webpage not found!')
 })
 
 app.listen(process.env.PORT, () => {
