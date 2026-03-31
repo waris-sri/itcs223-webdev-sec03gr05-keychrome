@@ -1,0 +1,61 @@
+require('dotenv').config()
+const express = require('express')
+const path = require('path')
+const router = express.Router()
+const app = express()
+
+// For EJS
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, '../views'))
+// For Express
+app.use(express.static(path.join(__dirname, '..')))
+app.use(express.urlencoded({ extended: true }))
+app.use(router)
+
+const { Client } = require('pg')
+const dbClient = new Client(process.env.SUPABASE_CONNECTION_STRING)
+dbClient.connect()
+
+router.get('/', (req, res) => {
+    res.render('pages/index', {
+        title: 'Welcome to Keychrome!',
+    })
+})
+
+router.get('/search', (req, res) => {
+    res.render('pages/search', {
+        title: 'Search | Keychrome',
+    })
+})
+
+router.get('/members', (req, res) => {
+    res.render('pages/members', {
+        title: 'Team Members | Keychrome',
+    })
+})
+
+router.get('/admin-login', (req, res) => {
+    res.render('pages/admin-login', {
+        title: 'Administrator Login | Keychrome',
+    })
+})
+
+router.get('/test-db', async (req, res) => {
+    console.log(`Req: ${req.url}`)
+    try {
+        const result = await dbClient.query('SELECT * FROM account;')
+        res.send(result.rows)
+    } catch (err) {
+        console.error('Server error:', err)
+        res.status(500).send('Something broke!')
+    }
+})
+
+router.use((req, res) => {
+    console.log(`Req: ${req.url}`)
+    res.status(404).send('404: Webpage not found!')
+})
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server listening on port: ${process.env.PORT}`)
+})
