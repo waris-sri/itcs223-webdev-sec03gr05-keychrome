@@ -8,6 +8,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 *:not(dialog) {
@@ -30,8 +32,7 @@ body {
 }
 
 main {
-    padding-inline: var(--padding-desktop);
-    background: maroon;
+    padding: var(--padding-desktop);
     flex: 1;
 }
 
@@ -62,6 +63,14 @@ select {
 
 a {
     color: var(--white);
+    cursor: pointer;
+}
+
+a > button {
+    padding: 4px 6px 4px 6px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
 }
 
 a,
@@ -112,29 +121,24 @@ h1 {
     font-size: 3rem;
     color: var(--orange);
     font-weight: 500;
-    text-wrap: balance;
-    overflow-wrap: break-word;
 }
 
 h2 {
     font-size: 1.75rem;
     color: var(--white);
     font-weight: 500;
-    text-wrap: balance;
 }
 
 h3 {
     font-size: 1.5rem;
     color: var(--white);
     font-weight: 500;
-    text-wrap: balance;
 }
 
 h4 {
     font-size: 1.25rem;
     color: var(--white);
     font-weight: 500;
-    text-wrap: balance;
 }
 
 h1,
@@ -155,6 +159,10 @@ h4 {
         'Helvetica Neue',
         sans-serif;
     overflow-wrap: break-word;
+    text-wrap: balance;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 #root,

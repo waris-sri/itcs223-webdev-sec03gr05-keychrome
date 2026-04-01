@@ -10,10 +10,5 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: green;
-    /* background: linear-gradient(
-        180deg,
-        var(--black) 60%,
-        var(--transparent) 100%
-    ); */
+    background: linear-gradient(180deg, var(--black) 60%, transparent 100%);
 }
