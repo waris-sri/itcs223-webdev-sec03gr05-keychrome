@@ -40,6 +40,12 @@ router.get('/admin-login', (req, res) => {
     })
 })
 
+router.get('/product-view', (req, res) => {
+    res.render('pages/product-view', {
+        title: 'Product View | Keychrome',
+    })
+})
+
 router.get('/test-db', async (req, res) => {
     console.log(`Req: ${req.url}`)
     try {

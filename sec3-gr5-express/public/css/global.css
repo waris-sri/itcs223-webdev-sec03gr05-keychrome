@@ -29,6 +29,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 main {
@@ -73,14 +74,23 @@ a {
 
 button {
     cursor: pointer;
+    text-transform: capitalize;
 }
 
 button.primary-btn {
-    text-transform: capitalize;
     border: 0;
     padding: 4px 8px;
     font-weight: 500;
     font-size: 0.75rem;
+}
+
+button.secondary-btn {
+    border: 0;
+    padding: 4px 8px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    width: 100%;
+    background: #6a728230;
 }
 
 button.round-btn {
@@ -261,5 +271,28 @@ h4 {
     .product-card-info {
         padding: 8px;
     }
-    width: 250px;
+    flex: 0 0 25%;
+    min-width: 200px;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: center;
+    width: 100%;
+    padding: 0;
+    div {
+        width: 100%;
+    }
+}
+
+.product-card {
+    div[status='onsale'] {
+    }
+    div[status='soldout'] {
+    }
 }
