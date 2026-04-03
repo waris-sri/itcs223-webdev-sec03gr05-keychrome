@@ -1,143 +1,144 @@
 #product-types {
-    display: grid;
-    gap: 10px;
-    align-self: stretch;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    width: 100%;
-    margin-top: calc(var(--padding-desktop) / 2);
+  display: grid;
+  gap: 10px;
+  align-self: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100%;
+  margin-top: calc(var(--padding-desktop) / 2);
 }
 
 section#product-types {
-    a[type='custom-keyboard'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/custom-keyboard-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type='iso-keyboard'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/iso-keyboard-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type='keycaps'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/keycaps-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type='low-profile'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/low-profile-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type='mice'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/mice-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type='normal-profile'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/normal-profile-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type='palm-rests'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/palm-rests-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type='switches'] {
-        background:
-            linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/switches-collection-image.webp');
-        background-size:
-            auto,
-            120% auto;
-        background-position: center, center;
-    }
-    a[type] {
-        transition: background-size 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    a[type]:hover {
-        background-size:
-            auto,
-            125% auto;
-    }
+  a[type="custom-keyboard"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/custom-keyboard-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type="iso-keyboard"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/iso-keyboard-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type="keycaps"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/keycaps-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type="low-profile"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/low-profile-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type="mice"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/mice-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type="normal-profile"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/normal-profile-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type="palm-rests"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/palm-rests-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type="switches"] {
+    background:
+      linear-gradient(180deg, #020618bb 20%, transparent 50%),
+      url("/images/homepage/switches-collection-image.webp") no-repeat;
+    background-size:
+      auto,
+      125% auto;
+    background-position: center, center;
+  }
+  a[type] {
+    transition: background-size 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  a[type]:hover {
+    background-size:
+      auto,
+      130% auto;
+  }
 }
 
 section#our-bestsellers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 32px;
-    margin-top: 1.5rem;
-    div[type='custom-keyboard'] {
-        background: url('/images/homepage/custom-keyboard-collection-image.webp');
-        background-size: cover;
-        background-position: center;
-    }
-    a > div > section {
-        background-color: var(--white);
-        padding: 8px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 32px;
+  margin-top: 1.5rem;
+  div[type="custom-keyboard"] {
+    background: url("/images/homepage/custom-keyboard-collection-image.webp")
+      no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  a > div > section {
+    background-color: var(--white);
+    padding: 8px;
+  }
 }
 
 .corner-lg {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: var(--orange);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--orange);
 }
 
 .corner-sm {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: var(--white);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--white);
 }
 
 .tl {
-    top: -0.5px;
-    left: -0.5px;
+  top: -0.5px;
+  left: -0.5px;
 }
 
 .tr {
-    top: -0.5px;
-    right: -0.5px;
+  top: -0.5px;
+  right: -0.5px;
 }
 
 .bl {
-    bottom: -0.5px;
-    left: -0.5px;
+  bottom: -0.5px;
+  left: -0.5px;
 }
 
 .br {
-    bottom: -0.5px;
-    right: -0.5px;
+  bottom: -0.5px;
+  right: -0.5px;
 }
