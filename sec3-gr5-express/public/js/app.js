@@ -46,6 +46,24 @@ router.get('/product-view', (req, res) => {
     })
 })
 
+router.get('/privacy-policy', (req, res) => {
+    res.render('pages/privacy-policy', {
+        title: 'Privacy Policy | Keychrome',
+    })
+})
+
+router.get('/refund-policy', (req, res) => {
+    res.render('pages/refund-policy', {
+        title: 'Refund Policy | Keychrome',
+    })
+})
+
+router.get('/tos', (req, res) => {
+    res.render('pages/tos', {
+        title: 'Terms of Service | Keychrome',
+    })
+})
+
 router.get('/test-db', async (req, res) => {
     console.log(`Req: ${req.url}`)
     try {
