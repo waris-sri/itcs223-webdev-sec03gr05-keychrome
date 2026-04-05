@@ -1,0 +1,23 @@
+div[status]:not([type]) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    line-height: 1.5;
+    gap: 2px;
+    padding-inline: 4px;
+    color: var(--white);
+    z-index: 99;
+}
+
+div[status='discount-available'] {
+    background: var(--orange);
+}
+
+div[status='sold-out'] {
+    background: var(--red);
+}
+
+div[status='new-arrival'] {
+    background: var(--blue);
+}

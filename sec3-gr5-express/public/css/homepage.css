@@ -11,13 +11,13 @@ section#product-types {
     a[type='custom-keyboard'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/custom-keyboard-collection-image.webp')
-                no-repeat;
+            url('/images/homepage/custom-keyboard-collection-image.webp') no-repeat;
         background-size:
             auto,
             125% auto;
         background-position: center, center;
     }
+
     a[type='iso-keyboard'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
@@ -27,6 +27,7 @@ section#product-types {
             125% auto;
         background-position: center, center;
     }
+
     a[type='keycaps'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
@@ -36,6 +37,7 @@ section#product-types {
             125% auto;
         background-position: center, center;
     }
+
     a[type='low-profile'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
@@ -45,6 +47,7 @@ section#product-types {
             125% auto;
         background-position: center, center;
     }
+
     a[type='mice'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
@@ -54,16 +57,17 @@ section#product-types {
             125% auto;
         background-position: center, center;
     }
+
     a[type='normal-profile'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/normal-profile-collection-image.webp')
-                no-repeat;
+            url('/images/homepage/normal-profile-collection-image.webp') no-repeat;
         background-size:
             auto,
             125% auto;
         background-position: center, center;
     }
+
     a[type='palm-rests'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
@@ -73,6 +77,7 @@ section#product-types {
             125% auto;
         background-position: center, center;
     }
+
     a[type='switches'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
@@ -82,9 +87,11 @@ section#product-types {
             125% auto;
         background-position: center, center;
     }
+
     a[type] {
         transition: background-size 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     a[type]:hover {
         background-size:
             auto,
@@ -99,12 +106,14 @@ section#our-bestsellers {
     width: 100%;
     gap: 32px;
     margin-top: 1.5rem;
+
+    /* TODO: Remove this later */
     div[type='custom-keyboard'] {
-        background: url('/images/homepage/custom-keyboard-collection-image.webp')
-            no-repeat;
+        background: url('/images/homepage/custom-keyboard-collection-image.webp') no-repeat;
         background-size: cover;
         background-position: center;
     }
+
     a > div > section {
         background-color: var(--white);
         padding: 8px;

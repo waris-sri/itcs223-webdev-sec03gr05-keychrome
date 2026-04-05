@@ -5,8 +5,7 @@ header {
     display: flex;
     width: 100%;
     height: fit-content;
-    padding: calc(var(--padding-desktop) / 2) var(--padding-desktop)
-        calc(var(--padding-desktop) / 2) var(--padding-desktop);
+    padding: calc(var(--padding-desktop) / 2) var(--padding-desktop) calc(var(--padding-desktop) / 2) var(--padding-desktop);
     flex-direction: row;
     align-items: center;
     justify-content: center;

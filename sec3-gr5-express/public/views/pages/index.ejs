@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
-<body>
+
+<body style="background: var(--black)">
     <!-- Hero Section -->
     <section id="keyboards-hero">
         <h1 style="margin-bottom: -4px">
@@ -20,7 +21,8 @@
     >
         <hr />
         <h2>looking for something?</h2>
-        <!-- TODO: When clicked, query the search system as that product type. -->
+        <!-- TODO: When clicked, query the search system as that product type (The headers are the same as `Type` in SQL). -->
+        <!-- FIXME: Change all product types to be the same as `Type` in SQL. -->
         <section id="product-types">
             <a class="img-thumbnail" type="custom-keyboard">
                 <h4>Custom Keyboards</h4>
@@ -88,9 +90,11 @@
                     <i class="fa-solid fa-angle-right"></i></button
             ></a>
             <div class="carousel-container">
-                <!-- TODO: Convert product cards and status cards to partials with options for discount-available, sold-out, new-arrival (if yes, then display the tags) -->
+                <!-- TODO: Include options for {discount-available, sold-out, new-arrival} (if yes, then display the tags) -->
                 <%- include('../partials/product-card') %>
+            </div>
         </section>
     </main>
 </body>
+<div><%- include('../partials/product-card-status') %></div>
 <%- include('../partials/footer') %>

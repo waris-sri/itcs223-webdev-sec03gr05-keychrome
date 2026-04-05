@@ -67,7 +67,18 @@ router.get('/tos', (req, res) => {
 router.get('/test-db', async (req, res) => {
     console.log(`Req: ${req.url}`)
     try {
-        const result = await dbClient.query('SELECT * FROM account;')
+        const result = await dbClient.query('SELECT * FROM Account;')
+        res.send(result.rows)
+    } catch (err) {
+        console.error('Server error:', err)
+        res.status(500).send('Something broke!')
+    }
+})
+
+router.get('/test-img', async (req, res) => {
+    console.log(`Req: ${req.url}`)
+    try {
+        const result = await dbClient.query('SELECT * FROM Image;')
         res.send(result.rows)
     } catch (err) {
         console.error('Server error:', err)
@@ -77,7 +88,9 @@ router.get('/test-db', async (req, res) => {
 
 router.use((req, res) => {
     console.log(`Req: ${req.url}`)
-    res.status(404).send('404: Webpage not found!')
+    res.status(404).render('pages/not-found.ejs', {
+        title: '404! | Keychrome',
+    })
 })
 
 app.listen(process.env.PORT, () => {

@@ -11,9 +11,14 @@ Extra Extra Large: 1400px or 1536px and up.
 
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html {
+    scrollbar-gutter: stable;
+}
+
 :root {
     scroll-behavior: smooth;
     --padding-desktop: 64px;
+    /* TODO: Introduce other padding values for better responsive design */
 }
 
 *,
@@ -38,10 +43,10 @@ body {
     background-color: var(--black);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 main {
@@ -144,7 +149,6 @@ ol,
 .data-price,
 .data-tag {
     font-family: 'Geist Mono', monospace;
-    color: var(--black);
 }
 
 .data-price {
@@ -162,7 +166,7 @@ ol,
     font-weight: 500;
 }
 
-.ratings-count {
+.ratings-num {
     color: var(--gray);
 }
 
@@ -258,11 +262,13 @@ h4 {
     flex-direction: column;
     align-items: flex-start;
     justify-self: stretch;
+
     h4 {
         align-self: stretch;
         text-align: left;
         text-shadow: 0 0 8px var(--black);
     }
+
     height: 180px;
 }
 
@@ -312,9 +318,11 @@ h4 {
 
 .product-card {
     background: var(--white);
+
     .product-card-info {
         padding: 8px;
     }
+
     flex: 0 0 25%;
     min-width: 200px;
 }
@@ -329,14 +337,16 @@ h4 {
     scroll-snap-align: center;
     width: 100%;
     padding: 0;
+
     div {
         width: 100%;
     }
 }
 
 .product-card {
-    div[status='discount-available'] {
-    }
-    div[status='sold-out'] {
-    }
+    div[status='discount-available'] {}
+
+    div[status='sold-out'] {}
+
+    div[status='new-arrival'] {}
 }
