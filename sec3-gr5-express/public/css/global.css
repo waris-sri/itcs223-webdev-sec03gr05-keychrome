@@ -125,6 +125,15 @@ select {
     font: inherit;
 }
 
+/* dddd */
+textarea,
+input,
+select {
+    background: var(--gray-40);
+    border: none;
+    padding: 8px;
+}
+
 a {
     color: var(--white);
     cursor: pointer;
@@ -161,6 +170,7 @@ button.primary-btn {
     border: 0;
     padding: 4px 8px;
     font-weight: 500;
+    font-size: 1rem;
 }
 
 button.secondary-btn {
@@ -170,6 +180,27 @@ button.secondary-btn {
     width: 100%;
     background: var(--light-gray);
     color: var(--black);
+    font-size: 1rem;
+}
+
+button.cta {
+    border: 0;
+    padding: 4px 8px;
+    font-weight: 500;
+    width: 100%;
+    background: var(--orange);
+    color: var(--black);
+    font-size: 1rem;
+}
+
+button.danger {
+    border: 0;
+    padding: 4px 8px;
+    font-weight: 500;
+    width: 100%;
+    background: var(--red);
+    color: var(--white);
+    font-size: 1rem;
 }
 
 button.round-btn {
@@ -248,6 +279,15 @@ select {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     opacity: 1;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 10px;
+    background: red;
 }
 
 h1 {
@@ -354,12 +394,6 @@ label {
     color: var(--white);
 }
 
-textarea,
-input,
-select {
-    background: var(--gray-40);
-    border: none;
-}
 
 label,
 .body-lg {
