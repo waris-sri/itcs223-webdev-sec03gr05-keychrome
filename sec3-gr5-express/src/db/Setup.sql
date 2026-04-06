@@ -1,6 +1,17 @@
 -- WARNING: This schema is for context only and is not meant to be run.
 -- Table order and constraints may not be valid for execution.
 
+-- CREATE TYPE product_category AS ENUM (
+--     'Custom Keyboards', 
+--     'Keycaps', 
+--     'Mice', 
+--     'Slim Keyboards', 
+--     'Switches', 
+--     'Wired Keyboards', 
+--     'Wireless Keyboard', 
+--     'Z-Others'
+-- );
+
 CREATE TABLE account (
 	accountid    CHARACTER VARYING NOT NULL,
 	firstname    CHARACTER VARYING NOT NULL,

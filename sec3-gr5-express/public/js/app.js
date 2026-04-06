@@ -16,16 +16,59 @@ const { Client } = require('pg')
 const dbClient = new Client(process.env.SUPABASE_CONNECTION_STRING)
 dbClient.connect()
 
-router.get('/', (req, res) => {
-    res.render('pages/index', {
-        title: 'Welcome to Keychrome!',
-    })
+router.get('/', async (req, res) => {
+    try {
+        const result = await dbClient.query(`SELECT 
+  p.SKU AS SKU, 
+  CONCAT_WS(' ',
+    'Keychrome',
+    Series,
+    Version,
+    SwitchType,
+    Switch,
+    type
+  ) AS Name,
+  rating AS Rating,
+  price AS Price,
+
+  (
+    SELECT ARRAY_AGG(m.source)
+    FROM Image m
+    WHERE m.SKU = p.SKU
+  ) AS Images,
+
+  ARRAY_REMOVE(ARRAY[
+    CASE WHEN p.NewArrival THEN 'new-arrival' END,
+    CASE WHEN p.DiscountAvailable THEN 'discount-available' END,
+    CASE 
+      WHEN COALESCE((
+        SELECT SUM(s.Amount)
+        FROM Stocks s
+        WHERE s.sku = p.SKU
+      ), 0) = 0 THEN 'sold-out'
+    END
+  ], NULL) AS status
+
+FROM Product p ORDER BY p.rating DESC LIMIT 10;`)
+        res.render('pages/index', {
+            title: 'Welcome to Keychrome!',
+            products: result.rows,
+        })
+    } catch (err) {
+        console.error(err)
+        res.status(500).send('Something broke!')
+    }
 })
 
 router.get('/search', (req, res) => {
     res.render('pages/search', {
         title: 'Search | Keychrome',
     })
+})
+
+router.get('/form-submit', (req, res) => {
+    // TODO: Complete the search function.
+    return 'Still work in progress!'
 })
 
 router.get('/members', (req, res) => {
@@ -62,6 +105,42 @@ router.get('/tos', (req, res) => {
     res.render('pages/tos', {
         title: 'Terms of Service | Keychrome',
     })
+})
+
+router.get('/test-bestseller', async (req, res) => {
+    const result = await dbClient.query(`SELECT 
+  p.SKU AS SKU, 
+  CONCAT_WS(' ',
+    'Keychrome',
+    Series,
+    Version,
+    SwitchType,
+    Switch,
+    type
+  ) AS Name,
+  rating AS Rating,
+  price AS Price,
+
+  (
+    SELECT ARRAY_AGG(m.source)
+    FROM Image m
+    WHERE m.SKU = p.SKU
+  ) AS Images,
+
+  ARRAY_REMOVE(ARRAY[
+    CASE WHEN p.NewArrival THEN 'new-arrival' END,
+    CASE WHEN p.DiscountAvailable THEN 'discount-available' END,
+    CASE 
+      WHEN COALESCE((
+        SELECT SUM(s.Amount)
+        FROM Stocks s
+        WHERE s.sku = p.SKU
+      ), 0) = 0 THEN 'sold-out'
+    END
+  ], NULL) AS status
+
+FROM Product p ORDER BY p.rating DESC LIMIT 10;`)
+    res.send(result.rows)
 })
 
 router.get('/test-db', async (req, res) => {

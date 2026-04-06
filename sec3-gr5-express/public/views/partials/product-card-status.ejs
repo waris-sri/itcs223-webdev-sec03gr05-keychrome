@@ -1,12 +1,26 @@
-<div status="discount-available">
-    <i class="fa-solid fa-store-slash" style="font-size: 12px;"></i>
-    <p class="data-tag">SOLD OUT</p>
-</div>
+<% if (product.status && product.status.length> 0) { %>
+<% product.status.forEach(s=> { %>
+
+<% if (s==='sold-out' ) { %>
 <div status="sold-out">
-    <i class="fa-solid fa-tag" style="font-size: 12px;"></i>
-    <p class="data-tag">SALE</p>
+  <i class="fa-solid fa-store-slash" style="font-size: 12px;"></i>
+  <p class="data-tag">SOLD OUT</p>
 </div>
+<% } %>
+
+<% if (s==='discount-available' ) { %>
+<div status="discount-available">
+  <i class="fa-solid fa-tag" style="font-size: 12px;"></i>
+  <p class="data-tag">SALE</p>
+</div>
+<% } %>
+
+<% if (s==='new-arrival' ) { %>
 <div status="new-arrival">
-    <i class="fa-solid fa-fire" style="font-size: 12px;"></i>
-    <p class="data-tag">NEW</p>
+  <i class="fa-solid fa-fire" style="font-size: 12px;"></i>
+  <p class="data-tag">NEW</p>
 </div>
+<% } %>
+
+<% }) %>
+<% } %>

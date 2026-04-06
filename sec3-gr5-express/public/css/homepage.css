@@ -4,24 +4,29 @@
     align-self: stretch;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     width: 100%;
-    margin-top: calc(var(--padding-desktop) / 2);
+    margin-top: calc(var(--padding) / 2);
+    padding: 0 var(--padding);
 }
 
 section#product-types {
-    a[type='custom-keyboard'] {
+    a {
+        padding: 16px;
+    }
+
+    a[type='custom-keyboards'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/custom-keyboard-collection-image.webp') no-repeat;
+            url('https://www.keychron.com/cdn/shop/files/custom-keyboard-collection-image.jpg?v=1719213359&width=460') no-repeat;
         background-size:
             auto,
             125% auto;
         background-position: center, center;
     }
 
-    a[type='iso-keyboard'] {
+    a[type='wireless-keyboards'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/iso-keyboard-collection-image.webp') no-repeat;
+            url('https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K10-Max-White-Version-2.jpg?v=1741254142') no-repeat;
         background-size:
             auto,
             125% auto;
@@ -31,17 +36,17 @@ section#product-types {
     a[type='keycaps'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/keycaps-collection-image.webp') no-repeat;
+            url('https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Yellow-Duck-Page2.jpg?v=1715138555') no-repeat;
         background-size:
             auto,
             125% auto;
         background-position: center, center;
     }
 
-    a[type='low-profile'] {
+    a[type='slim-keyboards'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/low-profile-collection-image.webp') no-repeat;
+            url('https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K3-Max-wireless-mechanical-keyboard.jpg?v=1699931171') no-repeat;
         background-size:
             auto,
             125% auto;
@@ -51,27 +56,27 @@ section#product-types {
     a[type='mice'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/mice-collection-image.webp') no-repeat;
+            url('https://www.keychron.com/cdn/shop/files/mice.jpg?v=1699326548&width=460') no-repeat;
         background-size:
             auto,
             125% auto;
         background-position: center, center;
     }
 
-    a[type='normal-profile'] {
+    a[type='wired-keyboards'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/normal-profile-collection-image.webp') no-repeat;
+            url('https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-C2-Pro-8K-QMK-Wired-Mechanical-Keyboard-2.jpg?v=1750219304&width=1680') no-repeat;
         background-size:
             auto,
             125% auto;
         background-position: center, center;
     }
 
-    a[type='palm-rests'] {
+    a[type='z-others'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/palm-rests-collection-image.webp') no-repeat;
+            url('https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/mousepad3-1678779759631.jpg?v=1678779763') no-repeat;
         background-size:
             auto,
             125% auto;
@@ -81,7 +86,7 @@ section#product-types {
     a[type='switches'] {
         background:
             linear-gradient(180deg, #020618bb 20%, transparent 50%),
-            url('/images/homepage/switches-collection-image.webp') no-repeat;
+            url('https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Gateron_Switch_Tester_-_Version_2.jpg?v=1702535128') no-repeat;
         background-size:
             auto,
             125% auto;
@@ -106,13 +111,7 @@ section#our-bestsellers {
     width: 100%;
     gap: 32px;
     margin-top: 1.5rem;
-
-    /* TODO: Remove this later */
-    div[type='custom-keyboard'] {
-        background: url('/images/homepage/custom-keyboard-collection-image.webp') no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
+    padding: 0 var(--padding);
 
     a > div > section {
         background-color: var(--white);

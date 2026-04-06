@@ -1,7 +1,40 @@
 <%- include('../partials/header') %>
-<body>
-    <main>
-        <h1>Search</h1>
-    </main>
+
+
+<body style="padding: 0">
+  <img id="search-head-img" src="/img/search/search-head-img.png">
+  <main style="padding-top: 0;">
+    <h1>your setup starts here</h1>
+    <hr>
+    <h2>search our products</h2>
+    <form method="get" action="/form-submit">
+      <!-- NOTE: Search using match containing keywords, since product name literals aren't stored in the database. -->
+      <label for="searchProductName">Product Name</label>
+      <input type="search" id="searchProductName" name="searchProductName" title="Enter a product name in part or in whole." placeholder="Enter a product name in part or in whole." required>
+
+      <label for="searchProductType">Product Type</label>
+      <!-- <input type="text" name="searchProductType" title="Select a product type." placeholder="Select…"> -->
+      <select id="searchProductType" name="searchProductType">
+        <option value="anyType" selected>Any Type</option>
+        <option value="customKeyboards">Custom Keyboards</option>
+        <option value="keycaps">Keycaps</option>
+        <option value="mice">Mice</option>
+        <option value="slimKeyboards">Slim Keyboards</option>
+        <option value="switches">Switches</option>
+        <option value="wiredKeyboards">Wired Keyboards</option>
+        <option value="wirelessKeyboards">Wireless Keyboards</option>
+        <option value="zOthers">Z-Others</option>
+      </select>
+
+      <label for="searchRatingAtLeast">Rating At Least</label>
+      <input type="number" id="searchRatingAtLeast" name="searchRatingAtLeast" title="Specify the minimum rating number of the result products." min="0" max="5" value="0">
+
+      <button type="submit" class="primary-btn">Search</button>
+    </form>
+    <h2 style="margin: 8px;">Results</h2>
+    <!-- TODO: Use EJS Logic -->
+    <p class="body-lg" style="text-align: center;">n items</p>
+  </main>
 </body>
+
 <%- include('../partials/footer') %>

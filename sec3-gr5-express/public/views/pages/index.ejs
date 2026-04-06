@@ -1,100 +1,121 @@
 <%- include('../partials/header') %>
 
 <body style="background: var(--black)">
-    <!-- Hero Section -->
-    <section id="keyboards-hero">
-        <h1 style="margin-bottom: -4px">
-            upgrade<br />your every<br />keystroke
-        </h1>
-        <img src="/images/homepage/keyboards-hero.png" class="slide-top" />
-        <div class="swipe-up-hint shake-vertical">
-            <i class="fa-solid fa-angles-up" style="color: var(--white)"></i>
-            <h4>Swipe up</h4>
-        </div>
-    </section>
-    <!-- Main Section -->
-    <main
-        style="
+  <!-- Hero Section -->
+  <section id="keyboards-hero">
+    <h1 style="margin-bottom: -4px">
+      upgrade<br />your every<br />keystroke
+    </h1>
+    <img src="/img/homepage/keyboards-hero.avif" class="slide-top" />
+    <div class="swipe-up-hint shake-vertical">
+      <i class="fa-solid fa-angles-up" style="color: var(--white)"></i>
+      <h4>Swipe up</h4>
+    </div>
+  </section>
+  <!-- Main Section -->
+  <main style="
             padding: 0 var(--padding-desktop) var(--padding-desktop)
                 var(--padding-desktop);
-        "
-    >
-        <hr />
-        <h2>looking for something?</h2>
-        <!-- TODO: When clicked, query the search system as that product type (The headers are the same as `Type` in SQL). -->
-        <!-- FIXME: Change all product types to be the same as `Type` in SQL. -->
-        <section id="product-types">
-            <a class="img-thumbnail" type="custom-keyboard">
-                <h4>Custom Keyboards</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-            <a class="img-thumbnail" type="normal-profile">
-                <h4>normal profile keyboards</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-            <a class="img-thumbnail" type="low-profile">
-                <h4>low-profile keyboards</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-            <a class="img-thumbnail" type="mice">
-                <h4>mice</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-            <a class="img-thumbnail" type="iso-keyboard">
-                <h4>ISO/JIS Keyboards</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-            <a class="img-thumbnail" type="keycaps">
-                <h4>all keycaps</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-            <a class="img-thumbnail" type="switches">
-                <h4>mechanical switches</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-            <a class="img-thumbnail" type="palm-rests">
-                <h4>palm rests</h4>
-                <span class="corner-lg tl"></span
-                ><span class="corner-lg tr"></span>
-                <span class="corner-lg bl"></span
-                ><span class="corner-lg br"></span>
-            </a>
-        </section>
-        <hr />
-        <h2>our bestsellers</h2>
-        <section id="our-bestsellers">
-            <a href="/search">
-                <button type="button" class="primary-btn">
-                    view all products
-                    <i class="fa-solid fa-angle-right"></i></button
-            ></a>
-            <div class="carousel-container">
-                <!-- TODO: Include options for {discount-available, sold-out, new-arrival} (if yes, then display the tags) -->
-                <%- include('../partials/product-card') %>
-            </div>
-        </section>
-    </main>
+        ">
+    <hr />
+    <h2>looking for something?</h2>
+    <!-- TODO: When clicked, query the search system as that product type (The headers are the same as `Type` in SQL). -->
+    <section id="product-types">
+      <a class="img-thumbnail" type="custom-keyboards">
+        <h4>Custom Keyboards</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+      <a class="img-thumbnail" type="wired-keyboards">
+        <h4>Wired Keyboards</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+      <a class="img-thumbnail" type="wireless-keyboards">
+        <h4>Wireless Keyboards</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+      <a class="img-thumbnail" type="slim-keyboards">
+        <h4>Slim Keyboards</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+      <a class="img-thumbnail" type="mice">
+        <h4>Mice</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+      <a class="img-thumbnail" type="keycaps">
+        <h4>Keycaps</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+      <a class="img-thumbnail" type="switches">
+        <h4>Switches</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+      <a class="img-thumbnail" type="z-others">
+        <h4>Others</h4>
+        <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+        <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      </a>
+    </section>
+    <hr />
+    <h2>our bestsellers</h2>
+    <section id="our-bestsellers">
+      <a href="/search">
+        <button type="button" class="primary-btn">
+          view all products
+          <i class="fa-solid fa-angle-right"></i></button></a>
+      <div class="carousel-container">
+        <%- include('../partials/bestseller-list', {products}) %>
+      </div>
+    </section>
+    <hr />
+    <h2>signature Keychrome features</h2>
+    <section id="product-types" style="padding: 0 var(--padding); margin: calc(var(--padding)/2) 0;">
+      <div class="product-card">
+        <div class="img-thumbnail" style="background-image: url('https://www.keychron.com/cdn/shop/files/Best-Mechanical-Keyboard-Recogniazed-By-AI.jpg?v=1747707990&width=1072'); background-size: cover; background-position: center;">
+          <span class="corner-sm tl"></span><span class="corner-sm tr"></span>
+          <span class="corner-sm bl"></span><span class="corner-sm br"></span>
+        </div>
+        <div class="product-card-info" style="padding: 16px;">
+          <p class="body-lg" style="font-weight: 600; margin-bottom: 8px;">Best Mechanical Keyboard Brand Recognized
+            By AI</p>
+          <p style="color: var(--black); margin-bottom: auto;">AI recognizes Keychrome as the best mechanical keyboard brand. When asking
+            ChatGPT, Gemini, and Grok about the best mechanical keyboard brand, we received the answer: Keychrome.</p>
+          <a style="padding: 0;"><button type="button" class="secondary-btn" style="margin-top: 8px;">explore more <i class="fa-solid fa-angle-right"></i></button></a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-thumbnail" style="background-image: url('https://www.keychron.com/cdn/shop/files/Keychron_s_mac_layout.jpg?v=1699255956&width=1072'); background-size: cover; background-position: center;">
+          <span class="corner-sm tl"></span><span class="corner-sm tr"></span>
+          <span class="corner-sm bl"></span><span class="corner-sm br"></span>
+        </div>
+        <div class="product-card-info" style="padding: 16px;">
+          <p class="body-lg" style="font-weight: 600; margin-bottom: 8px;">Keychrome's Mac Layout</p>
+          <p style="color: var(--black); margin-bottom: auto;">Keychrome is one of the few mechanical keyboards that features macOS media
+            keys (F1 to F12) in a Mac layout with the same as conventional Mac systems.
+          </p>
+          <a style="padding: 0;"><button type="button" class="secondary-btn" style="margin-top: 8px;">explore more <i class="fa-solid fa-angle-right"></i></button></a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-thumbnail" style="background-image: url('https://www.keychron.com/cdn/shop/files/Keychron_keyboards_compatible_with_all_devices.jpg?v=1699256232&width=1072'); background-size: cover; background-position: center;">
+          <span class="corner-sm tl"></span><span class="corner-sm tr"></span>
+          <span class="corner-sm bl"></span><span class="corner-sm br"></span>
+        </div>
+        <div class="product-card-info" style="padding: 16px;">
+          <p class="body-lg" style="font-weight: 600; margin-bottom: 8px;">Compatible With All Devices</p>
+          <p style="color: var(--black); margin-bottom: auto;">Keychrome keyboards are 100% compatible with multiple operating systems.
+            Perfectly suitable for macOS, Windows, iOS, as well as Android.
+          </p>
+          <a style="padding: 0;"><button type="button" class="secondary-btn" style="margin-top: 8px;">explore more <i class="fa-solid fa-angle-right"></i></button></a>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
-<div><%- include('../partials/product-card-status') %></div>
 <%- include('../partials/footer') %>

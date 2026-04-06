@@ -1,25 +1,27 @@
-<!-- TODO: Link the name, rating, count, price, and status with the database, and be compatible with EJS partials but how? Pull and format as JSON then loop? -->
 <div class="product-card">
-    <!-- status: {discount-available, sold-out, new-arrival} -->
-    <div
-        class="img-thumbnail"
-        type="custom-keyboard"
-        status="discount-available"
-    >
-        <span class="corner-sm tl"></span><span class="corner-sm tr"></span>
-        <span class="corner-sm bl"></span><span class="corner-sm br"></span>
+  <% const img = (product.images && product.images.length > 0)
+     ? product.images[0]
+     : 'https://pkihtwrzvtwzmcvyfkka.supabase.co/storage/v1/object/public/product_images/test_image.png';
+  %>
+
+  <div class="img-thumbnail" type="custom-keyboards" status="discount-available" style="background-image: url('<%= img %>'); background-size: cover; background-position: center;">
+    <div><%- include('../partials/product-card-status', { product }) %></div>
+    <span class="corner-sm tl"></span><span class="corner-sm tr"></span>
+    <span class="corner-sm bl"></span><span class="corner-sm br"></span>
+  </div>
+  <div class="product-card-info">
+    <p class="body-lg">
+      <%= product.name %>
+    </p>
+    <div class="ratings-section">
+      <p class="stars"><%= '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.round(product.rating)) %></p>
+      <p class="data-tag ratings-num"><%= product.rating %></p>
     </div>
-    <div class="product-card-info">
-        <p class="body-lg">
-            Keychrome Q6 Ultra 8K Wireless Custom Mechanical Keyboard
-        </p>
-        <div class="ratings-section">
-            <!-- TODO: Make procedural with CSS -->
-            <p class="stars">★★★★★</p>
-            <p class="data-tag ratings-num">5.0</p>
-        </div>
-        <p class="data-price discount-available">$199.99</p>
-        <a><button type="button" class="secondary-btn">view details</button></a>
-    </div>
+    <% if (product.status.includes('discount-available')) { %>
+    <p class="data-price discount-available">$<%= product.price %></p>
+    <% } else { %>
+    <p class="data-price">$<%= product.price %></p>
+    <% } %>
+    <a href="/product/<%= product.sku %>"><button type="button" class="secondary-btn">view details <i class="fa-solid fa-angle-right"></i></button></a>
+  </div>
 </div>
-<!-- test -->

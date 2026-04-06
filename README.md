@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="sec3-gr5-express/public/images/general/logo-orange.svg" alt="Keychrome Logo" width='auto' height='auto'>
+    <img src="sec3-gr5-express/public/img/general/logo-orange.svg" alt="Keychrome Logo" width='auto' height='auto'>
     <br>
     <span style="font-size: 24px; color: #FF8000; font-family: 'SF Mono', Menlo, Monaco, Consolas, monospace; font-weight: bold;">ITCS223 Section 3, Group 5</span>
     <br>

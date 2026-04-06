@@ -1,0 +1,10 @@
+#search-head-img {
+    min-height: 25dvh;
+    max-height: 40dvh;
+    object-fit: cover;
+    object-position: center bottom;
+    mask-image: linear-gradient(180deg, var(--black) 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg,
+            var(--black) 90%,
+            transparent 100%);
+}

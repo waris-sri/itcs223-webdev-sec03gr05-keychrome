@@ -1,13 +1,25 @@
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     display: flex;
     width: 100%;
     height: fit-content;
-    padding: calc(var(--padding-desktop) / 2) var(--padding-desktop) calc(var(--padding-desktop) / 2) var(--padding-desktop);
+    padding: calc(var(--padding) / 2) var(--padding) calc(var(--padding) / 2) var(--padding);
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, var(--black) 60%, transparent 100%);
+    background: linear-gradient(180deg, #020618 60%, transparent 100%);
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: var(--padding);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header {
+        padding: calc(var(--padding) / 4) var(--padding) calc(var(--padding) / 4) var(--padding);
+    }
 }
