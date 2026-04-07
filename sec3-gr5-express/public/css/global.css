@@ -9,104 +9,104 @@ Extra Large (Large Desktops): 1200px or 1280px and up.
 Extra Extra Large: 1400px or 1536px and up.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 html {
-    scrollbar-gutter: stable;
+  scrollbar-gutter: stable;
 }
 
 :root {
-    scroll-behavior: smooth;
-    --padding: 64px;
+  scroll-behavior: smooth;
+  --padding: 64px;
 }
 
 @media screen and (max-width: 768px) {
-    :root {
-        --padding: 32px;
-    }
+  :root {
+    --padding: 32px;
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    h2 {
-        font-size: 1.5rem;
-    }
+  h2 {
+    font-size: 1.5rem;
+  }
 
-    h3 {
-        font-size: 1.25rem;
-    }
+  h3 {
+    font-size: 1.25rem;
+  }
 
-    h4 {
-        font-size: 1.1rem;
-    }
+  h4 {
+    font-size: 1.1rem;
+  }
 
-    h5 {
-        font-size: 1rem;
-    }
+  h5 {
+    font-size: 1rem;
+  }
 
-    .body-lg,
-    label {
-        font-size: 0.9rem;
-    }
+  .body-lg,
+  label {
+    font-size: 0.9rem;
+  }
 
-    p {
-        font-size: 0.85rem;
-    }
+  p {
+    font-size: 0.85rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    :root {
-        --padding: 128px;
-    }
+  :root {
+    --padding: 128px;
+  }
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 *:not(dialog) {
-    margin: 0;
+  margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    html {
-        interpolate-size: allow-keywords;
-    }
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
 
 body {
-    padding-top: 96px;
-    background-color: var(--black);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  padding-top: 96px;
+  background-color: var(--black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-    padding: var(--padding);
-    flex: 1;
+  padding: var(--padding);
+  flex: 1;
 }
 
 hr {
-    width: 40px;
-    height: 4px;
-    margin: 0 auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background-color: var(--white);
-    border: 0;
+  width: 40px;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--white);
+  border: 0;
 }
 
 hr:not(:first-of-type) {
-    margin-top: 56px;
+  margin-top: 56px;
 }
 
 img,
@@ -114,103 +114,103 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 /* dddd */
 textarea,
 input,
 select {
-    background: var(--gray-40);
-    border: none;
-    padding: 8px;
+  background: var(--gray-40);
+  border: none;
+  padding: 8px;
 }
 
 a {
-    color: var(--white);
-    cursor: pointer;
-    text-decoration: underline #FF8000BB 3px;
-    text-decoration-skip-ink: none;
-    font-weight: 500;
+  color: var(--white);
+  cursor: pointer;
+  text-decoration: underline #ff8000bb 3px;
+  text-decoration-skip-ink: none;
+  font-weight: 500;
 }
 
 section > a:has(> h4) {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    cursor: pointer;
-    text-transform: capitalize;
-    color: var(--black);
-    font-family:
-        'Geist',
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
-        sans-serif;
-    font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: var(--black);
+  font-family:
+    "Geist",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 0.85rem;
 }
 
 button.primary-btn {
-    border: 0;
-    padding: 4px 8px;
-    font-weight: 500;
-    font-size: 1rem;
+  border: 0;
+  padding: 4px 8px;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 button.secondary-btn {
-    border: 0;
-    padding: 4px 8px;
-    font-weight: 500;
-    width: 100%;
-    background: var(--light-gray);
-    color: var(--black);
-    font-size: 1rem;
+  border: 0;
+  padding: 4px 8px;
+  font-weight: 500;
+  width: 100%;
+  background: var(--light-gray);
+  color: var(--black);
+  font-size: 1rem;
 }
 
 button.cta {
-    border: 0;
-    padding: 4px 8px;
-    font-weight: 500;
-    width: 100%;
-    background: var(--orange);
-    color: var(--black);
-    font-size: 1rem;
+  border: 0;
+  padding: 4px 8px;
+  font-weight: 500;
+  width: 100%;
+  background: var(--orange);
+  color: var(--black);
+  font-size: 1rem;
 }
 
 button.danger {
-    border: 0;
-    padding: 4px 8px;
-    font-weight: 500;
-    width: 100%;
-    background: var(--red);
-    color: var(--white);
-    font-size: 1rem;
+  border: 0;
+  padding: 4px 8px;
+  font-weight: 500;
+  width: 100%;
+  background: var(--red);
+  color: var(--white);
+  font-size: 1rem;
 }
 
 button.round-btn {
-    border-radius: 999px;
-    padding: 4px 6px 4px 6px;
-    border: 0;
+  border-radius: 999px;
+  padding: 4px 6px 4px 6px;
+  border: 0;
 }
 
 input[type="number"] {
-    font-family: 'Geist Mono', monospace;
+  font-family: "Geist Mono", monospace;
 }
 
 a,
@@ -223,248 +223,252 @@ li,
 ul,
 ol,
 .label {
-    font-family:
-        'Geist',
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
-        sans-serif;
-    overflow-wrap: break-word;
-    color: var(--white);
+  font-family:
+    "Geist",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  overflow-wrap: break-word;
+  color: var(--white);
 }
 
 .data-price,
 .data-tag {
-    font-family: 'Geist Mono', monospace;
+  font-family: "Geist Mono", monospace;
 }
 
 .data-price {
-    font-size: 1.25rem;
-    font-weight: 600;
-    font-family: 'Geist Mono', monospace;
-    color: var(--black);
-    margin-top: -5px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Geist Mono", monospace;
+  color: var(--black);
+  margin-top: -5px;
+}
+
+.data-price.discount-available {
+  color: var(--orange);
 }
 
 .data-tag {
-    font-size: 0.875rem;
-    font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .ratings-num {
-    color: var(--gray);
-    gap: 4px;
-    line-height: 1.7;
+  color: var(--gray);
+  gap: 4px;
+  line-height: 1.7;
 }
 
 .label {
-    font-size: 0.75rem;
-    font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 p,
 label,
 select {
-    text-wrap: pretty;
-    color: var(--white);
+  text-wrap: pretty;
+  color: var(--white);
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    opacity: 1;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 10px;
-    background: red;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 10px;
+  background: red;
 }
 
 h1 {
-    font-size: 3rem;
-    color: var(--orange);
-    font-weight: 500;
-    margin-bottom: 16px;
+  font-size: 3rem;
+  color: var(--orange);
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
 h2 {
-    font-size: 1.75rem;
-    color: var(--white);
-    font-weight: 500;
+  font-size: 1.75rem;
+  color: var(--white);
+  font-weight: 500;
 }
 
 h3 {
-    font-size: 1.5rem;
-    color: var(--white);
-    font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 500;
 }
 
 h4 {
-    font-size: 1.25rem;
-    color: var(--white);
-    font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--white);
+  font-weight: 500;
 }
 
 h5 {
-    font-family:
-        Geist,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
-        sans-serif;
-    font-size: 1.1rem;
-    color: var(--white);
-    font-weight: 600;
-    margin-top: 8px;
+  font-family:
+    Geist,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  font-weight: 600;
+  margin-top: 8px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family:
-        Tomorrow,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
-        sans-serif;
-    overflow-wrap: break-word;
-    text-wrap: balance;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
+  font-family:
+    Tomorrow,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 form {
-    padding: 32px 0;
+  padding: 32px 0;
 }
 
 #root,
 #__next {
-    isolation: isolate;
+  isolation: isolate;
 }
 
 .img-thumbnail {
-    position: relative;
-    display: flex;
-    height: auto;
-    padding: calc(var(--padding) / 4);
-    flex-direction: column;
-    align-items: flex-start;
-    justify-self: stretch;
+  position: relative;
+  display: flex;
+  height: auto;
+  padding: calc(var(--padding) / 4);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: stretch;
 
-    h4 {
-        align-self: stretch;
-        text-align: left;
-        text-shadow: 0 0 8px var(--black);
-    }
+  h4 {
+    align-self: stretch;
+    text-align: left;
+    text-shadow: 0 0 8px var(--black);
+  }
 
-    height: 180px;
+  height: 180px;
 }
 
 div > .body-lg {
-    color: var(--black);
+  color: var(--black);
 }
 
 label {
-    color: var(--white);
+  color: var(--white);
 }
-
 
 label,
 .body-lg {
-    font-family:
-        Geist,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
-        sans-serif;
-    font-weight: 600;
-    font-size: 1.12rem;
-    line-height: 1;
+  font-family:
+    Geist,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-weight: 600;
+  font-size: 1.12rem;
+  line-height: 1;
 }
 
 .stars {
-    color: var(--orange);
-    font-family:
-        Geist,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
-        sans-serif;
+  color: var(--orange);
+  font-family:
+    Geist,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .ratings-section {
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-    margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-top: auto;
 }
 
 .product-card {
-    background: var(--white);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+
+  .product-card-info {
+    padding: 8px;
     display: flex;
     flex-direction: column;
-    min-width: 200px;
-
-    .product-card-info {
-        padding: 8px;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
+    flex: 1;
+  }
 }
 
 .carousel-container {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
-    scroll-snap-align: center;
-    width: 100%;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: center;
+  width: 100%;
+  padding: 0;
 
-    div {
-        width: 100%;
-    }
+  div {
+    width: 100%;
+  }
 }
+
