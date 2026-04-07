@@ -7,39 +7,51 @@
     <h1>your setup starts here</h1>
     <hr>
     <h2>search our products</h2>
-    <form method="get" action="/form-submit" id="form-layout">
+    <form method="get" action="/search" id="form-layout">
       <!-- NOTE: Search using match containing keywords, since product name literals aren't stored in the database. -->
       <div class="label-input-styling">
         <label for="searchProductName"><i class="fa-solid fa-bag-shopping"></i> Product Name</label>
-        <input type="search" id="searchProductName" name="searchProductName" title="Enter a product name in part or in whole." placeholder="Enter a product name in part or in whole." required>
+        <input type="search" id="searchProductName" name="searchProductName" value="<%= query.searchProductName || '' %>" title="Enter a product name in part or in whole." placeholder="Enter a product name in part or in whole." required>
       </div>
 
       <div class="label-input-styling">
         <label for="searchProductType"><i class="fa-solid fa-shapes"></i> Product Type</label>
-        <!-- <input type="text" name="searchProductType" title="Select a product type." placeholder="Select…"> -->
         <select id="searchProductType" name="searchProductType">
-          <option value="anyType" selected>Any Type</option>
-          <option value="customKeyboards">Custom Keyboards</option>
-          <option value="keycaps">Keycaps</option>
-          <option value="mice">Mice</option>
-          <option value="slimKeyboards">Slim Keyboards</option>
-          <option value="switches">Switches</option>
-          <option value="wiredKeyboards">Wired Keyboards</option>
-          <option value="wirelessKeyboards">Wireless Keyboards</option>
-          <option value="zOthers">Z-Others</option>
+          <option value=''>Any Type</option>
+          <option value="Custom Keyboards" <%=query.searchProductType==='Custom Keyboards' ? 'selected' : '' %>>Custom
+            Keyboards</option>
+          <option value="Keycaps" <%=query.searchProductType==='Keycaps' ? 'selected' : '' %>>Keycaps</option>
+          <option value="Mice" <%=query.searchProductType==='Mice' ? 'selected' : '' %>>Mice</option>
+          <option value="Slim Keyboards" <%=query.searchProductType==='Slim Keyboards' ? 'selected' : '' %>>Slim
+            Keyboards</option>
+          <option value="Switches" <%=query.searchProductType==='Switches' ? 'selected' : '' %>>Switches</option>
+          <option value="Wired Keyboards" <%=query.searchProductType==='Wired Keyboards' ? 'selected' : '' %>>Wired
+            Keyboards</option>
+          <option value="Wireless Keyboards" <%=query.searchProductType==='Wireless Keyboards' ? 'selected' : '' %>>Wireless Keyboards</option>
+          <option value="Z-Others" <%=query.searchProductType==='Z-Others' ? 'selected' : '' %>>Z-Others</option>
         </select>
       </div>
 
       <div class="label-input-styling">
         <label for="searchRatingAtLeast"><i class="fa-solid fa-star"></i> Rating At Least</label>
-        <input type="number" id="searchRatingAtLeast" name="searchRatingAtLeast" title="Specify the minimum rating number of the result products." min="0" max="5" value="0">
+        <input type="number" id="searchRatingAtLeast" value="<%= query.searchRatingAtLeast || '0' %>" name="searchRatingAtLeast" title="Specify the minimum rating number of the result products." min="0" max="5">
       </div>
 
       <button type="submit" class="cta"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
     </form>
     <h2 style="margin: 8px;">Results</h2>
-    <!-- TODO: Use EJS Logic -->
-    <p class="body-lg" style="text-align: center;">n items</p>
+    <p class="body-lg" style="text-align: center;">
+      <%= products.length %> items
+    </p>
+    <% if (products.length===0 && query.searchProductName) { %>
+    <%- include('../partials/no-results') %>
+    <% } %>
+
+    <div class="search-results-container">
+      <% products.forEach(product=> { %>
+      <%- include('../partials/product-card', { product: product }) %>
+      <% }) %>
+    </div>
   </main>
 </body>
 

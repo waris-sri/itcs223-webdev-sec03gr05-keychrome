@@ -491,3 +491,17 @@ label,
     width: 100%;
   }
 }
+
+.search-results-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem
+}
+
+.product-card {
+  width: calc(50% - 8px);
+}
