@@ -1,4 +1,4 @@
-#product-types {
+#grid-display {
   display: grid;
   gap: 10px;
   align-self: stretch;
@@ -8,7 +8,7 @@
   padding: 0 var(--padding);
 }
 
-section#product-types {
+section#grid-display {
   a {
     padding: 16px;
   }
@@ -16,8 +16,7 @@ section#product-types {
   a[type="custom-keyboards"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://www.keychron.com/cdn/shop/files/custom-keyboard-collection-image.jpg?v=1719213359&width=460")
-        no-repeat;
+      url("https://www.keychron.com/cdn/shop/files/custom-keyboard-collection-image.jpg?v=1719213359&width=460") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -27,8 +26,7 @@ section#product-types {
   a[type="wireless-keyboards"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K10-Max-White-Version-2.jpg?v=1741254142")
-        no-repeat;
+      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K10-Max-White-Version-2.jpg?v=1741254142") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -38,8 +36,7 @@ section#product-types {
   a[type="keycaps"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Yellow-Duck-Page2.jpg?v=1715138555")
-        no-repeat;
+      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Yellow-Duck-Page2.jpg?v=1715138555") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -49,8 +46,7 @@ section#product-types {
   a[type="slim-keyboards"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K3-Max-wireless-mechanical-keyboard.jpg?v=1699931171")
-        no-repeat;
+      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K3-Max-wireless-mechanical-keyboard.jpg?v=1699931171") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -60,8 +56,7 @@ section#product-types {
   a[type="mice"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://www.keychron.com/cdn/shop/files/mice.jpg?v=1699326548&width=460")
-        no-repeat;
+      url("https://www.keychron.com/cdn/shop/files/mice.jpg?v=1699326548&width=460") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -71,8 +66,7 @@ section#product-types {
   a[type="wired-keyboards"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-C2-Pro-8K-QMK-Wired-Mechanical-Keyboard-2.jpg?v=1750219304&width=1680")
-        no-repeat;
+      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-C2-Pro-8K-QMK-Wired-Mechanical-Keyboard-2.jpg?v=1750219304&width=1680") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -82,8 +76,7 @@ section#product-types {
   a[type="z-others"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/mousepad3-1678779759631.jpg?v=1678779763")
-        no-repeat;
+      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/mousepad3-1678779759631.jpg?v=1678779763") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -93,8 +86,7 @@ section#product-types {
   a[type="switches"] {
     background:
       linear-gradient(180deg, #020618bb 20%, transparent 50%),
-      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Gateron_Switch_Tester_-_Version_2.jpg?v=1702535128")
-        no-repeat;
+      url("https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Gateron_Switch_Tester_-_Version_2.jpg?v=1702535128") no-repeat;
     background-size:
       auto,
       125% auto;
@@ -160,4 +152,3 @@ section#our-bestsellers {
   bottom: -0.2px;
   right: -0.2px;
 }
-
