@@ -1,8 +1,41 @@
 <%- include('../partials/header') %>
 
 <body>
-  <main>
-    <h1>Admin Login</h1>
+  <main style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">
+    <span class="img-thumbnail" style="width: fit-content; height: fit-content;">
+      <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
+      <span class="corner-lg bl"></span><span class="corner-lg br"></span>
+      <i class="fa-solid fa-user-tie" style="color: var(--orange); font-size: xx-large; padding-top: 4px; padding-bottom: 4px;"></i>
+    </span>
+    <h1 style="margin-top: 32px; margin-bottom: 32px;">Administrator Login</h1>
+    <form method="get" action="/admin-login" id="form-layout-admin-login">
+      <div class="label-input-styling">
+        <label for="firstName"><i class="fa-solid fa-user"></i> First Name</label>
+        <input type="text" id="firstName" name="firstName" value="" title="Enter your first name." placeholder="John" required>
+      </div>
+
+      <div class="label-input-styling">
+        <label for="lastName"><i class="fa-solid fa-user"></i> Last Name</label>
+        <input type="text" id="lastName" name="lastName" value="" title="Enter your last name." placeholder="Doe" required>
+      </div>
+
+      <div class="label-input-styling">
+        <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+        <input type="email" id="email" value="" name="email" title="Enter the email address." required>
+      </div>
+
+      <div class="label-input-styling">
+        <label for="password"><i class="fa-solid fa-key"></i> Password</label>
+        <input type="password" id="password" value="" name="password" title="Enter the password." required>
+        <ul>
+          <li>8–16 characters</li>
+          <li>At least 1 uppercase, 1 lowercase, and 1 number</li>
+        </ul>
+      </div>
+
+      <button type="submit" class="cta"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</button>
+    </form>
   </main>
 </body>
+
 <%- include('../partials/footer') %>

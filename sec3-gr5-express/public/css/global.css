@@ -153,9 +153,13 @@ section > a:has(> h4) {
   text-decoration: none;
 }
 
+button,
+label {
+  text-transform: capitalize;
+}
+
 button {
   cursor: pointer;
-  text-transform: capitalize;
   color: var(--black);
   font-family:
     "Geist",
@@ -500,8 +504,4 @@ label,
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem
-}
-
-.product-card {
-  width: calc(50% - 8px);
 }

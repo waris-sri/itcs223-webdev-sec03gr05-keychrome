@@ -7,7 +7,7 @@
     <h1>your setup starts here</h1>
     <hr>
     <h2>search our products</h2>
-    <form method="get" action="/search" id="form-layout">
+    <form method="get" action="/search" id="form-layout-search">
       <!-- NOTE: Search using match containing keywords, since product name literals aren't stored in the database. -->
       <div class="label-input-styling">
         <label for="searchProductName"><i class="fa-solid fa-bag-shopping"></i> Product Name</label>
@@ -43,7 +43,10 @@
     <p class="body-lg" style="text-align: center;">
       <%= products.length %> items
     </p>
-    <% if (products.length===0 && query.searchProductName) { %>
+
+    <% if (products.length===0 && !query.searchProductName) { %>
+    <%- include('../partials/try-searching') %>
+    <% } else if (products.length===0 && query.searchProductName) { %>
     <%- include('../partials/no-results') %>
     <% } %>
 
