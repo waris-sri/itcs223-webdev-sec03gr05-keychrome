@@ -84,18 +84,18 @@ VALUES ('CB-GAMER-X', '210.00'),
        ('CB-STARTER', '129.50');
 
 INSERT INTO image ("imageid", "source", "SKU")
-VALUES ('IMG-CBL-01', '/img/products/cable_bl.png', 'CBL-COILED-BL'),
-       ('IMG-K1-01', '/img/products/k1_pro_1.png', 'K1-PRO-RED'),
-       ('IMG-K3-01', '/img/products/k3_lite.png', 'K3-LITE'),
-       ('IMG-K8-01', '/img/products/k8_pro_wl.png', 'K8-PRO-WL'),
-       ('IMG-KC-01', '/img/products/keycap_wht.png', 'KC-PBT-WHT'),
-       ('IMG-M1-01', '/img/products/m1_mouse.png', 'M1-WL-MOUSE'),
-       ('IMG-M2-01', '/img/products/m2_ergo.png', 'M2-ERGO'),
-       ('IMG-MAT-01', '/img/products/deskmat.png', 'DESKMAT-L-BLK'),
-       ('IMG-Q1-01', '/img/products/q1_max_1.png', 'Q1-MAX-WHT'),
-       ('IMG-SW-01', '/img/products/sw_red.png', 'SW-GAT-RED-35'),
-       ('IMG-SW-02', '/img/products/sw_brown.png', 'SW-CHY-BRN-35'),
-       ('IMG-V1-01', '/img/products/v1_custom.png', 'V1-CUSTOM');
+VALUES ('IMG-CBL-01', '../public/img/products/cable_bl.png', 'CBL-COILED-BL'),
+       ('IMG-K1-01', '../public/img/products/k1_pro_1.png', 'K1-PRO-RED'),
+       ('IMG-K3-01', '../public/img/products/k3_lite.png', 'K3-LITE'),
+       ('IMG-K8-01', '../public/img/products/k8_pro_wl.png', 'K8-PRO-WL'),
+       ('IMG-KC-01', '../public/img/products/keycap_wht.png', 'KC-PBT-WHT'),
+       ('IMG-M1-01', '../public/img/products/m1_mouse.png', 'M1-WL-MOUSE'),
+       ('IMG-M2-01', '../public/img/products/m2_ergo.png', 'M2-ERGO'),
+       ('IMG-MAT-01', '../public/img/products/deskmat.png', 'DESKMAT-L-BLK'),
+       ('IMG-Q1-01', '../public/img/products/q1_max_1.png', 'Q1-MAX-WHT'),
+       ('IMG-SW-01', '../public/img/products/sw_red.png', 'SW-GAT-RED-35'),
+       ('IMG-SW-02', '../public/img/products/sw_brown.png', 'SW-CHY-BRN-35'),
+       ('IMG-V1-01', '../public/img/products/v1_custom.png', 'V1-CUSTOM');
 
 INSERT INTO stocks ("stockid", "color", "amount", "sku")
 VALUES ('STK-CBL-BLU', 'Blue', 250, 'CBL-COILED-BL'),

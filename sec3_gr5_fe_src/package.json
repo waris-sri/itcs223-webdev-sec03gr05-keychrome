@@ -1,21 +1,21 @@
 {
-  "name": "sec3-gr5-express",
-  "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "./public/js/fe.js",
-  "scripts": {
-    "start": "nodemon fe.js"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.100.1",
-    "dotenv": "^17.3.1",
-    "ejs": "^5.0.1",
-    "express": "^5.2.1",
-    "flag-icons": "^7.5.0",
-    "nodemon": "^3.1.14",
-    "pg": "^8.20.0"
-  }
+    "name": "sec3_gr5_fe_src",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
+    "main": "./src/fe.js",
+    "scripts": {
+        "start": "nodemon fe.js"
+    },
+    "dependencies": {
+        "@supabase/supabase-js": "^2.100.1",
+        "dotenv": "^17.3.1",
+        "ejs": "^5.0.1",
+        "express": "^5.2.1",
+        "flag-icons": "^7.5.0",
+        "nodemon": "^3.1.14",
+        "pg": "^8.20.0"
+    }
 }

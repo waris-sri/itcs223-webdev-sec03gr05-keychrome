@@ -4,6 +4,10 @@ const path = require('path')
 const router = express.Router()
 const app = express()
 
+// TODO: Migrate these to backend subproject
+// FIXME: Change res.render() to res.send() for backend
+// FIXME: Change the main path of Express
+
 // For EJS
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '../views'))

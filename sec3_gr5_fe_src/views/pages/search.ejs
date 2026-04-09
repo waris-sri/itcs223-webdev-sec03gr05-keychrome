@@ -2,7 +2,7 @@
 
 
 <body style="padding: 0">
-  <img id="search-head-img" src="/img/search/search-head-img.png">
+  <img id="search-head-img" src="../public/img/search/search-head-img.png">
   <main style="padding-top: 0;">
     <h1>your setup starts here</h1>
     <hr>
@@ -11,7 +11,7 @@
       <!-- NOTE: Search using match containing keywords, since product name literals aren't stored in the database. -->
       <div class="label-input-styling">
         <label for="searchProductName"><i class="fa-solid fa-bag-shopping"></i> Product Name</label>
-        <input type="search" id="searchProductName" name="searchProductName" value="<%= query.searchProductName || '' %>" title="Enter a product name in part or in whole." placeholder="Enter a product name in part or in whole." required>
+        <input type="search" id="searchProductName" name="searchProductName" value="<%= query.searchProductName || '' %>" title="Enter a product name in part or in whole." placeholder="Enter a product name in part or in whole.">
       </div>
 
       <div class="label-input-styling">
