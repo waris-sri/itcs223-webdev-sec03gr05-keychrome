@@ -1,3 +1,5 @@
+# TODO: Add the finished report PDF in the repo!
+
 <div align="center">
     <img src="sec3_gr5_fe_src/public/img/general/logo-orange.svg" alt="Keychrome Logo" width='auto' height='auto'>
     <br>
@@ -27,10 +29,46 @@
 2. Lorem ipsum dolor sit amet
 3. Lorem ipsum dolor sit amet
 
+# Troubleshooting
+
+## <CASE1>
+
+1. Lorem ipsum dolor sit amet
+2. Lorem ipsum dolor sit amet
+3. Lorem ipsum dolor sit amet
+
+## <CASE2>
+
+1. Lorem ipsum dolor sit amet
+2. Lorem ipsum dolor sit amet
+3. Lorem ipsum dolor sit amet
+
+## <CASE3>
+
+1. Lorem ipsum dolor sit amet
+2. Lorem ipsum dolor sit amet
+3. Lorem ipsum dolor sit amet
+
+# Testing
+
+## <TESTCASE1>
+
+1. Lorem ipsum dolor sit amet
+2. Lorem ipsum dolor sit amet
+3. Lorem ipsum dolor sit amet
+
+## <TESTCASE2>
+
+1. Lorem ipsum dolor sit amet
+2. Lorem ipsum dolor sit amet
+3. Lorem ipsum dolor sit amet
+
 # Extra Remarks (\*\*if any; remove this if none)
 
 1. Lorem ipsum dolor sit amet
 2. Lorem ipsum dolor sit amet
 3. Lorem ipsum dolor sit amet
+
+# TODO: Delete this when submitting
 
 ## <a href='https://www.figma.com/design/5PsAq9mFdrbl834H4D0O56/Phase1-Sec3-Gr05-Keychrome?node-id=0-1&p=f'>Figma Link</a>
