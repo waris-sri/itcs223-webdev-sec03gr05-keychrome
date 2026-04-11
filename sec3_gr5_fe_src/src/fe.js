@@ -334,7 +334,7 @@ router.get('/test-img', async (req, res) => {
 
 router.use((req, res) => {
     console.log(`Req: ${req.url}`)
-    res.status(404).render('pages/not-found.ejs', {
+    res.status(404).render('pages/404-error.ejs', {
         title: '404! | Keychrome',
     })
 })
