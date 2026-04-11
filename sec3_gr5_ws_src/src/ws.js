@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const router = express.Router()
 const app = express()
+
 // For EJS
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '../../sec3_gr5_fe_src/views'))
