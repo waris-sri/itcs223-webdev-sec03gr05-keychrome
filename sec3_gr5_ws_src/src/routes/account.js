@@ -1,7 +1,7 @@
 const express = require('express')
-const router = express.Router();
+const router = express.Router()
 
-const {Client} = require('pg')
+const { Client } = require('pg')
 const dbClient = new Client(process.env.SUPABASE_CONNECTION_STRING)
 dbClient.connect()
 
@@ -19,8 +19,8 @@ router.get('/', async (req, res) => {
 // TODO: Add/Modify/Delete Product
 
 router.get('/:accountid', async (req, res) => {
-    const accountid = req.params.accountid;
-    console.log(`Req: /api/account/${accountid}`);
+    const accountid = req.params.accountid
+    console.log(`Req: /api/account/${accountid}`)
 
     try {
         const queryText = `
@@ -38,21 +38,20 @@ router.get('/:accountid', async (req, res) => {
 					 JOIN manage ON account.accountid = manage.accountid
 			WHERE account.accountid =
 			$1;
-        `;
-        const queryValues = [accountid];
+        `
+        const queryValues = [accountid]
 
-        const result = await dbClient.query(queryText, queryValues);
+        const result = await dbClient.query(queryText, queryValues)
 
         if (result.rows.length === 0) {
-            return res.status(204).json({error: 'No Content'});
+            return res.status(204).json({ error: 'No Content' })
         }
 
-        res.send(result.rows[0]);
-
+        res.send(result.rows[0])
     } catch (err) {
-        console.error('Server error:', err);
-        res.status(500).send('Something broke!');
+        console.error('Server error:', err)
+        res.status(500).send('Something broke!')
     }
-});
+})
 
-module.exports = router;
+module.exports = router

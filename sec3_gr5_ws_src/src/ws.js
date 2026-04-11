@@ -12,9 +12,9 @@ app.use('/api/account', accountRoutes)
 
 app.use((req, res) => {
     // console.log(`Req: ${req.url}`)
-    res.status(402).json([{status: 402, error: 'No Content'}])
+    res.status(402).json([{ status: 402, error: 'No Content' }])
 })
 
 app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
+    console.log(`Server is running on ${PORT}`)
 })
