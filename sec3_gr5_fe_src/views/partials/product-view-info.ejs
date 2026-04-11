@@ -1,0 +1,35 @@
+<!-- NOTE: This is initially made for just testing data display,
+ which is just showing the returned result as plaintext and an image on the webpage.
+ To work on product views, please edit this file directly to add the UI. -->
+<h4>Product Image</h4>
+<img style="width: 150px; margin-inline: auto;" src="<%= productInfo.image_source %>" alt="<%= productInfo.description %>">
+<h4>SKU</h4>
+<p align="center"><%= `${productInfo.sku}` %></p>
+<h4>Series</h4>
+<p align="center"><%= `${productInfo.series}` %></p>
+<h4>Description</h4>
+<p align="center"><%= `${productInfo.description}` %></p>
+<h4>Price</h4>
+<p align="center"><%= `${productInfo.price}` %></p>
+<h4>Type</h4>
+<p align="center"><%= `${productInfo.type}` %></p>
+<h4>Sensor</h4>
+<p align="center"><%= `${productInfo.sensor}` %></p>
+<h4>Switch Type</h4>
+<p align="center"><%= `${productInfo.switchtype}` %></p>
+<h4>Switch</h4>
+<p align="center"><%= `${productInfo.switch}` %></p>
+<h4>Version</h4>
+<p align="center"><%= `${productInfo.version}` %></p>
+<h4>Layout Version</h4>
+<p align="center"><%= `${productInfo.layoutversion}` %></p>
+<h4>Discount Available?</h4>
+<p align="center"><%= `${productInfo.discountavailable}` %></p>
+<h4>New Arrival?</h4>
+<p align="center"><%= `${productInfo.newarrival}` %></p>
+<h4>Rating</h4>
+<p align="center"><%= `${productInfo.rating}` %></p>
+<h4>Combo ID</h4>
+<p align="center"><%= `${productInfo.comboid}` %></p>
+<h4>Stock Amount</h4>
+<p align="center"><%= `${productInfo.stock_amount}` %></p>
