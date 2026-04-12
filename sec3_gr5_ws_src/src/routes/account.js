@@ -8,7 +8,13 @@ dbClient.connect()
 router.get('/', async (req, res) => {
     console.log(`Req: /api/account`)
     try {
-        const result = await dbClient.query('SELECT * FROM Account;')
+        const result = await dbClient.query(`SELECT accountid,
+                                                    firstname,
+                                                    lastname,
+                                                    email
+--                                                     registerdate,
+--                                                     logintime
+                                             FROM Account;`)
         res.send(result.rows)
     } catch (err) {
         console.error('Server error:', err)
@@ -28,8 +34,8 @@ router.get('/:accountid', async (req, res) => {
 			       firstname,
 			       lastname,
 			       email,
-			       registerdate,
-			       logintime,
+-- 			       registerdate,
+-- 			       logintime,
 			       manageid,
 			       managetime,
 			       manageaction,
