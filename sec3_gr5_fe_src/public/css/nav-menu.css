@@ -1,0 +1,9 @@
+#nav-menu {
+  padding-top: 16px;
+
+  /* height: 0; */
+  /* overflow-y: hidden; */
+  a {
+    text-decoration: none;
+  }
+}

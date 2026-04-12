@@ -3,55 +3,65 @@
 
 <body style="padding: 0">
   <img id="search-head-img" src="../public/img/search/search-head-img.png">
-  <main style="padding-top: 0;">
+  <main style="padding-top: 0; padding-bottom: 0;">
     <h1>your setup starts here</h1>
+
     <hr>
+
     <h2>search our products</h2>
+
     <form method="get" action="/search" id="form-layout-search">
-      <!-- NOTE: Search using match containing keywords, since product name literals aren't stored in the database. -->
       <div class="label-input-styling">
         <label for="searchProductName"><i class="fa-solid fa-bag-shopping"></i> Product Name</label>
-        <input type="search" id="searchProductName" name="searchProductName" value="<%= query.searchProductName || '' %>" title="Enter a product name in part or in whole." placeholder="Enter a product name in part or in whole.">
+        <div class="indicator">
+          <input type="search" id="searchProductName" name="searchProductName" value="<%= query.searchProductName || '' %>" title="Enter a product name in part or in whole." placeholder="Enter a product name in part or in whole.">
+        </div>
       </div>
 
       <div class="label-input-styling">
         <label for="searchProductType"><i class="fa-solid fa-shapes"></i> Product Type</label>
         <select id="searchProductType" name="searchProductType">
           <option value=''>Any Type</option>
-          <option value="Custom Keyboards" <%=query.searchProductType==='Custom Keyboards' ? 'selected' : '' %>>Custom
+          <option value="Custom Keyboards" <%= query.searchProductType === 'Custom Keyboards' ? 'selected' : '' %>>Custom
             Keyboards</option>
-          <option value="Keycaps" <%=query.searchProductType==='Keycaps' ? 'selected' : '' %>>Keycaps</option>
-          <option value="Mice" <%=query.searchProductType==='Mice' ? 'selected' : '' %>>Mice</option>
-          <option value="Slim Keyboards" <%=query.searchProductType==='Slim Keyboards' ? 'selected' : '' %>>Slim
+          <option value="Keycaps" <%= query.searchProductType === 'Keycaps' ? 'selected' : '' %>>Keycaps</option>
+          <option value="Mice" <%= query.searchProductType === 'Mice' ? 'selected' : '' %>>Mice</option>
+          <option value="Slim Keyboards" <%= query.searchProductType === 'Slim Keyboards' ? 'selected' : '' %>>Slim
             Keyboards</option>
-          <option value="Switches" <%=query.searchProductType==='Switches' ? 'selected' : '' %>>Switches</option>
-          <option value="Wired Keyboards" <%=query.searchProductType==='Wired Keyboards' ? 'selected' : '' %>>Wired
+          <option value="Switches" <%= query.searchProductType === 'Switches' ? 'selected' : '' %>>Switches</option>
+          <option value="Wired Keyboards" <%= query.searchProductType === 'Wired Keyboards' ? 'selected' : '' %>>Wired
             Keyboards</option>
-          <option value="Wireless Keyboards" <%=query.searchProductType==='Wireless Keyboards' ? 'selected' : '' %>>Wireless Keyboards</option>
-          <option value="Z-Others" <%=query.searchProductType==='Z-Others' ? 'selected' : '' %>>Z-Others</option>
+          <option value="Wireless Keyboards" <%= query.searchProductType === 'Wireless Keyboards' ? 'selected' : '' %>>Wireless Keyboards</option>
+          <option value="Z-Others" <%= query.searchProductType === 'Z-Others' ? 'selected' : '' %>>Z-Others</option>
         </select>
       </div>
 
       <div class="label-input-styling">
         <label for="searchRatingAtLeast"><i class="fa-solid fa-star"></i> Rating At Least</label>
-        <input type="number" id="searchRatingAtLeast" value="<%= query.searchRatingAtLeast || '0' %>" name="searchRatingAtLeast" title="Specify the minimum rating number of the result products." min="0" max="5">
+        <div class="indicator">
+          <input type="number" id="searchRatingAtLeast" value="<%= query.searchRatingAtLeast || '0' %>" name="searchRatingAtLeast" title="Specify the minimum rating number of the result products." min="0" max="5">
+        </div>
       </div>
 
       <button type="submit" class="cta"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
     </form>
     <h2 style="margin: 8px;">Results</h2>
     <p class="body-lg" style="text-align: center;">
+      <% if (products.length === 1) { %>
+      <%= products.length %> item
+      <% } else { %>
       <%= products.length %> items
+      <% } %>
     </p>
 
-    <% if (products.length===0 && !query.searchProductName) { %>
+    <% if (products.length === 0 && !query.searchProductName) { %>
     <%- include('../partials/try-searching') %>
-    <% } else if (products.length===0 && query.searchProductName) { %>
+    <% } else if (products.length === 0 && query.searchProductName) { %>
     <%- include('../partials/no-results') %>
     <% } %>
 
     <div class="search-results-container">
-      <% products.forEach(product=> { %>
+      <% products.forEach(product => { %>
       <%- include('../partials/product-card', { product: product }) %>
       <% }) %>
     </div>

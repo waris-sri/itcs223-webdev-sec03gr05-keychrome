@@ -1,10 +1,11 @@
 <%- include('../partials/header') %>
 
-<body style="background: var(--black)">
+<body>
   <!-- Hero Section -->
   <section id="keyboards-hero">
     <h1 style="margin-bottom: -4px" id="hero-text">
       upgrade<br />your every<br />keystroke
+      <span id="cursor">&nbsp;</span>
     </h1>
     <img src="../public/img/homepage/keyboards-hero.avif" class="slide-top" />
     <div class="swipe-up-hint shake-vertical">
@@ -19,45 +20,44 @@
         ">
     <hr />
     <h2>looking for something?</h2>
-    <!-- TODO: When clicked, query the search system as that product type (The headers are the same as `Type` in SQL). -->
     <section id="grid-display">
-      <a class="img-thumbnail" type="custom-keyboards">
+      <a href="/search?searchProductType=Custom+Keyboards" class="img-thumbnail" type="custom-keyboards">
         <h4>Custom Keyboards</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
-      <a class="img-thumbnail" type="wired-keyboards">
+      <a href="/search?searchProductType=Wired+Keyboards" class="img-thumbnail" type="wired-keyboards">
         <h4>Wired Keyboards</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
-      <a class="img-thumbnail" type="wireless-keyboards">
+      <a href="/search?searchProductType=Wireless+Keyboards" class="img-thumbnail" type="wireless-keyboards">
         <h4>Wireless Keyboards</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
-      <a class="img-thumbnail" type="slim-keyboards">
+      <a href="/search?searchProductType=Slim+Keyboards" class="img-thumbnail" type="slim-keyboards">
         <h4>Slim Keyboards</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
-      <a class="img-thumbnail" type="mice">
+      <a href="/search?searchProductType=Mice" class="img-thumbnail" type="mice">
         <h4>Mice</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
-      <a class="img-thumbnail" type="keycaps">
+      <a href="/search?searchProductType=Keycaps" class="img-thumbnail" type="keycaps">
         <h4>Keycaps</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
-      <a class="img-thumbnail" type="switches">
+      <a href="/search?searchProductType=Switches" class="img-thumbnail" type="switches">
         <h4>Switches</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
-      <a class="img-thumbnail" type="z-others">
-        <h4>Others</h4>
+      <a href="/search?searchProductType=Z-Others" class="img-thumbnail" type="z-others">
+        <h4>Z-Others</h4>
         <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
         <span class="corner-lg bl"></span><span class="corner-lg br"></span>
       </a>
@@ -69,7 +69,7 @@
         <button type="button" class="primary-btn">
           view all products
           <i class="fa-solid fa-angle-right"></i></button></a>
-      <div class="carousel-container">
+      <div class="carousel" id="bestsellers-carousel">
         <%- include('../partials/bestseller-list', {products}) %>
       </div>
     </section>

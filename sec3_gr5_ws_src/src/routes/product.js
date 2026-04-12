@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         res.send(result.rows)
     } catch (err) {
         console.error('Server error:', err)
-        res.status(500).send('Something broke!')
+        res.status(500).render('pages/500-error', { title: '500! | Keychrome' })
     }
 })
 
@@ -56,7 +56,7 @@ router.get('/:sku', async (req, res) => {
         res.send(result.rows[0])
     } catch (err) {
         console.error('Server error:', err)
-        res.status(500).send('Something broke!')
+        res.status(500).render('pages/500-error', { title: '500! | Keychrome' })
     }
 })
 

@@ -1,3 +1,28 @@
+#cursor {
+    display: inline-flex;
+    margin-left: -8px;
+    background: var(--blue);
+    transform: translateY(1px);
+    width: 2px;
+    border-radius: 2px;
+    animation: blink 1.75s step-start infinite both;
+    margin-bottom: 4px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 #keyboards-hero {
     display: flex;
     flex-direction: column;
@@ -60,6 +85,39 @@
 
     90% {
         transform: translateY(-6.4px);
+    }
+}
+
+.shake-vertical-subtle {
+    animation: shake-vertical-subtle 20s ease-in-out infinite both;
+}
+
+@keyframes shake-vertical-subtle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateY(-2px);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: translateY(2px);
+    }
+
+    80% {
+        transform: translateY(1px);
+    }
+
+    90% {
+        transform: translateY(1px);
     }
 }
 

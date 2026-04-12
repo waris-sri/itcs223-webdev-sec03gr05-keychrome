@@ -3,26 +3,50 @@ const express = require('express')
 const path = require('path')
 const router = express.Router()
 const app = express()
-// Hard-coded for now
-const ROOT_URL = 'http://localhost:3003/'
 
-// FIXME: Change res.render() to res.send() for backend
+// TODO: Hardcoded for now, fix when deploying
+const ROOT_URL = 'http://localhost:3003'
 
 // For EJS
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '../views'))
+
 // For Express
 app.use(express.static(path.join(__dirname, '..')))
 app.use(express.urlencoded({ extended: true }))
 app.use(router)
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
     fetch(ROOT_URL)
         .then((result) => result.json())
         .then((result) => {
             res.render('pages/index', {
                 title: 'Welcome to Keychrome!',
                 products: result,
+            })
+        })
+})
+
+router.get('/search', (req, res) => {
+    const hasQuery =
+        req.query.searchProductName ||
+        req.query.searchProductType ||
+        req.query.searchRatingAtLeast
+    if (!hasQuery) {
+        return res.render('pages/search', {
+            title: 'Search | Keychrome',
+            products: [],
+            query: req.query,
+        })
+    }
+
+    fetch(`${ROOT_URL}/search?${new URLSearchParams(req.query).toString()}`)
+        .then((result) => result.json())
+        .then((result) => {
+            res.render('pages/search', {
+                title: 'Search | Keychrome',
+                products: result,
+                query: req.query,
             })
         })
 })
@@ -39,9 +63,8 @@ router.get('/admin-login', (req, res) => {
     })
 })
 
-// const p = document.getElementById('test-show-product-info')
 router.get('/product/:sku', (req, res) => {
-    fetch(`${ROOT_URL}api/product/${req.params.sku}`)
+    fetch(`${ROOT_URL}/api/product/${req.params.sku}`)
         .then((result) => result.json())
         .then((result) => {
             res.render('pages/product-view', {
