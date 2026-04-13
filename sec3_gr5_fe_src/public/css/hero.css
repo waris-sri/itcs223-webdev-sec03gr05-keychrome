@@ -5,8 +5,8 @@
     transform: translateY(1px);
     width: 2px;
     border-radius: 2px;
-    animation: blink 1.75s step-start infinite both;
     margin-bottom: 4px;
+    animation: blink 1.75s step-start infinite both;
 }
 
 @keyframes blink {
