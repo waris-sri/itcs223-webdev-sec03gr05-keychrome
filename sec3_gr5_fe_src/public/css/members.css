@@ -14,7 +14,7 @@
 }
 
 .member-card {
-    min-width: 176px;
+    width: auto;
     min-height: 237px;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,8 @@
 .member-img-wrapper {
     position: relative;
     min-width: 176px;
-    height: 200px;
+    width: auto;
+    min-height: 200px;
     flex-shrink: 0;
 }
 
@@ -38,10 +39,10 @@
 }
 
 .member-info {
-    flex: flex-start;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 8px;
     gap: 0;
 }
