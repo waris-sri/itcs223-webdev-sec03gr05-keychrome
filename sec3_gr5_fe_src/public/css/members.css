@@ -1,19 +1,20 @@
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(2, 176px);
+    width: 100%;
+    grid-template-columns: repeat(2, auto);
     gap: 16px;
     justify-content: center;
     padding: var(--padding);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 576px) {
     .members-grid {
-        grid-template-columns: repeat(auto-fill, 176px);
+        grid-template-columns: auto auto auto auto;
     }
 }
 
 .member-card {
-    width: 176px;
+    min-width: 176px;
     min-height: 237px;
     display: flex;
     flex-direction: column;
@@ -23,7 +24,7 @@
 
 .member-img-wrapper {
     position: relative;
-    width: 176px;
+    min-width: 176px;
     height: 200px;
     flex-shrink: 0;
 }
@@ -37,11 +38,11 @@
 }
 
 .member-info {
-    flex: 1;
+    flex: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0;
+    padding: 8px;
     gap: 0;
 }
 
