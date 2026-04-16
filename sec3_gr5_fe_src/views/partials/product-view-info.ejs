@@ -1,7 +1,142 @@
 <!-- NOTE: This is initially made for just testing data display,
  which is just showing the returned result as plaintext and an image on the webpage.
  To work on product views, please edit this file directly to add the UI. -->
-<h4>Product Image</h4>
+<!-- <h4>Product Image</h4> -->
+
+<% const productName = ['Keychrome',
+    productInfo.series,
+    productInfo.version,
+    productInfo.switchType,
+    productInfo.switch,
+    productInfo.type].filter(Boolean); %>
+
+<% console.log(productInfo) %>
+
+<article id="product-container">
+    <img class="detailed-img" src="<%= productInfo.image_source %>" alt="<%= productInfo.description %>">
+
+    <div>
+        <section id="product-top">
+            <!-- <h4>Series</h4> -->
+            <!-- <p align="center" class="body-lg">
+                <%= `${productInfo.series}` %>
+            </p> -->
+    
+            <div class="conditional-tag">
+                <% if (productInfo.discountavailable) { %>
+                    <div data-status="discount-available">
+                        <i class="fa-solid fa-tag" style="font-size: 12px;"></i>
+                        <p class="data-tag">SALE</p>
+                    </div>
+                <% } %>
+    
+                <% if (productInfo.stock_amount === 0) { %>
+                    <div data-status="sold-out">
+                        <i class="fa-solid fa-store-slash" style="font-size: 12px;"></i>
+                        <p class="data-tag">SOLD OUT</p>
+                    </div>
+                <% } %>
+    
+                <% if (productInfo.newarrival) { %>
+                    <div data-status="new-arrival">
+                        <i class="fa-solid fa-fire shake-vertical-subtle" style="font-size: 12px;"></i>
+                        <p class="data-tag">NEW</p>
+                    </div>
+                <% } %>
+            </div>
+            
+    
+            <h5 style="text-align: left;">
+                <%= `${productName.join(" ")}` %>
+            </h5>
+            <!-- <h4>SKU</h4> -->
+            <p class="label">
+                SKU: <%= `${productInfo.sku}` %>
+            </p>
+            <!-- <h4>Price</h4> -->
+            <p style="color: var(--orange)" class="data-price">
+                $<%= `${productInfo.price}` %>
+            </p>
+    
+            <hr class="divider">
+        </section>
+        
+        <section id="product-mid">
+            <% if (productInfo.type) { %>
+                <div>
+                    <p class="label">Type</p>
+                    <p class="product-info">
+                        <%= `${productInfo.type}` %>
+                    </p>
+                </div>    
+            <% } %>
+    
+            <% if (productInfo.version) { %>
+                <div>   
+                    <p class="label">Version</p>
+                    <p class="product-info">
+                        <%= `${productInfo.version}` %>
+                    </p>
+                </div>
+            <% } %>
+        
+            <% if (productInfo.layoutversion) { %>
+                <div>
+                    <p class="label">Layout Version</p>
+                    <p class="product-info">
+                        <%= `${productInfo.layoutversion}` %>
+                    </p>
+                </div>   
+            <% } %>
+    
+            <% if (productInfo.switch) { %>
+                <div>
+                    <p class="label">Switches</p>
+                    <p class="product-info">
+                        <%= `${productInfo.switch}` %>
+                    </p>
+                </div>
+            <% } %>
+            
+            <% if (productInfo.switchtype) { %>
+                <div>
+                    <p class="label">Switch Type</p>
+                    <p class="product-info">
+                        <%= `${productInfo.switchtype}` %>
+                    </p>
+                </div>
+            <% } %>
+    
+            <% if (productInfo.sensor) { %>
+                <div>
+                    <p class="label">Sensor</p>
+                    <p class="product-info">
+                        <%= `${productInfo.sensor}` %>
+                    </p>
+                </div>
+            <% } %>
+    
+            <hr class="divider">
+    
+            <% if (productInfo.description) { %>
+                <p>
+                    <%= `${productInfo.description}` %>
+                </p>
+            <% } %>
+    
+            <div class="product-bottom">
+                <div>
+                    <label for="n_item_cart"></label>
+                    <input class="add-to-cart-input" type="number" id="n_item_cart" name="n_item_cart" value="0" title="number of carts" min="0" max="5">
+                </div>
+                <button type="submit" class="add-to-cart">Add to cart</button>
+            </div>
+        </section>
+    </div>
+    
+</article>
+
+<!-- <h4>Product Image</h4>
 <img style="width: 150px; margin-inline: auto;" src="<%= productInfo.image_source %>" alt="<%= productInfo.description %>">
 <h4>SKU</h4>
 <p align="center"><%= `${productInfo.sku}` %></p>
@@ -32,4 +167,4 @@
 <h4>Combo ID</h4>
 <p align="center"><%= `${productInfo.comboid}` %></p>
 <h4>Stock Amount</h4>
-<p align="center"><%= `${productInfo.stock_amount}` %></p>
+<p align="center"><%= `${productInfo.stock_amount}` %></p> -->

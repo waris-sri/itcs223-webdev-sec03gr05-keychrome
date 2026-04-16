@@ -1,0 +1,117 @@
+.detailed-img {
+    margin-bottom: 1vh;
+    width: 100%;
+    max-width: auto;
+    padding: 0 0 0 0;
+    /* margin-inline: auto; */
+}
+
+#product-container {
+    display: grid;
+}
+
+#product-top {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: start;
+    row-gap: 1vh;
+}
+
+.conditional-tag {
+    margin-top: 1vh;
+}
+
+div[data-status="discount-available"] {
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    padding: 3px 5px 3px 5px;
+}
+
+div[data-status="sold-out"] {
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+}
+
+div[data-status="new-arrival"] {
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    padding: 3px 7px 3px 5px;
+}
+
+hr.divider {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 0;
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 1.5vh 0vh 3vh 0vh;
+}
+
+#product-mid {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: start;
+    row-gap: 2vh;
+    height: fit-content;
+}
+
+.product-info {
+    width: fit-content;
+    height: auto;
+    border: 2px solid var(--orange);
+    background-color: var(--white);
+    color: var(--black);
+    padding: 3px 5px 3px 5px;
+    margin-top: 5px;
+}
+
+.product-bottom {
+    margin-top: 0vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1vw;
+    align-items: center;
+}
+
+.add-to-cart-input {
+  background: var(--pale-gray);
+  border: none;
+  padding: 4px 8px;
+  color: var(--black);
+  width: 100%;
+}
+
+.add-to-cart {
+  border: 0;
+  padding: 4px 8px;
+  font-weight: 500;
+  width: 100%;
+  height: fit-content;
+  color: var(--black);
+  font-size: 1rem;
+  background-color: var(--pale-gray);
+}
+
+@media screen and (min-width: 1024px) {
+    #product-container {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    hr.divider {
+        margin: 0.5vh 0vh 2vh 0vh;
+    }
+
+    .detailed-img {
+        padding: 0 2vw 0 0;
+    }
+
+    .conditional-tag {
+        margin-top: 0vh;
+    }
+}
