@@ -52,8 +52,16 @@ router.get('/search', (req, res) => {
 })
 
 router.get('/members', (req, res) => {
+    const members = [
+        {name: 'Waris Sripatoomrak', role: 'Team Member', img: 'waris' },
+        {name: 'Wachiravich Thaosiri', role: 'Team Member', img: 'wachiravich' },
+        {name: 'Warawuth Ngamluea', role: 'Team Member', img: 'warawuth' },
+        {name: 'Zwe Nyan Zaw', role: 'Team Member', img: 'zwe' },
+    ]
+
     res.render('pages/members', {
         title: 'Team Members | Keychrome',
+        members
     })
 })
 
