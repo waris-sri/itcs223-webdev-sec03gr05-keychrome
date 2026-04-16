@@ -1,0 +1,53 @@
+.members-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, auto);
+    gap: 16px;
+    justify-content: center;
+    padding: var(--padding);
+}
+
+@media (min-width: 576px) {
+    .members-grid {
+        grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+    }
+}
+
+.member-card {
+    width: auto;
+    min-height: 237px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    background-color: var(--white);
+}
+
+.member-img-wrapper {
+    position: relative;
+    min-width: 176px;
+    width: auto;
+    min-height: 200px;
+    flex-shrink: 0;
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.member-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 8px;
+    gap: 0;
+}
+
+.member-info p {
+    margin: 0;
+    line-height: 1.2;
+}
