@@ -5,7 +5,6 @@ CREATE TABLE account
 	lastname     CHARACTER VARYING NOT NULL,
 	email        CHARACTER VARYING NOT NULL UNIQUE,
 	password     CHARACTER VARYING NOT NULL,
-	salt         CHARACTER VARYING,
 	registerdate DATE              NOT NULL DEFAULT CURRENT_DATE,
 	logintime    TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT account_pkey PRIMARY KEY (accountid)
@@ -64,18 +63,17 @@ CREATE TABLE stocks
 	CONSTRAINT stocks_sku_fkey FOREIGN KEY (sku) REFERENCES product (sku)
 );
 
-INSERT INTO account ("accountid", "firstname", "lastname", "email", "password", "salt", "registerdate", "logintime")
-VALUES ('A001', 'Warawuth', 'Ngamluea', 'warawuth@mu.edu', 'Passw0rd123!', 'A001', '2025-10-01', '2026-02-28 10:15:00'),
-       ('A002', 'Bobby', 'Bloom', 'bobby.b@mail.com', 'M1necr@ftF@n', 'A002', '2025-11-15', '2026-02-28 12:30:00'),
-       ('A003', 'Alice', 'Smith', 'alice.smith@gmail.com', 'S3cr3tP@ss', 'A003', '2025-12-05', '2026-02-27 09:45:00'),
-       ('A004', 'John', 'Doe', 'jdoe99@yahoo.com', 'QwertyUIOP', 'A004', '2026-01-10', '2026-02-28 08:00:00'),
-       ('A005', 'Emma', 'Watson', 'emma.w@outlook.com', 'Hogw@rts99', 'A005', '2026-01-22', '2026-02-26 14:20:00'),
-       ('A006', 'Lucas', 'Muller', 'lmuller@bscc.de', 'Bremen2026!', 'A006', '2026-02-01', '2026-02-28 11:10:00'),
-       ('A007', 'Sophia', 'Chen', 'schen.dev@gmail.com', 'C0d1ng!sFun', 'A007', '2026-02-10', '2026-02-27 16:55:00'),
-       ('A008', 'Liam', 'Johnson', 'liam.j@hotmail.com', 'L!amJ0hnson', 'A008', '2026-02-14', '2026-02-28 07:30:00'),
-       ('A009', 'Olivia', 'Davis', 'olivia.davis@gmail.com', '0liviaD@vis', 'A009', '2026-02-18',
-        '2026-02-25 20:10:00'),
-       ('A010', 'Noah', 'Martinez', 'nmartinez@yahoo.com', 'N0@hM@rt1nez', 'A010', '2026-02-20', '2026-02-28 09:05:00');
+INSERT INTO "public"."account" ("accountid", "firstname", "lastname", "email", "password", "registerdate", "logintime")
+VALUES ('A001', 'Warawuth', 'Ngamluea', 'warawuth@mu.edu', 'Passw0rd123!', '2025-10-01', '2026-02-28 10:15:00'),
+       ('A002', 'Bobby', 'Bloom', 'bobby.b@mail.com', 'M1necr@ftF@n', '2025-11-15', '2026-02-28 12:30:00'),
+       ('A003', 'Alice', 'Smith', 'alice.smith@gmail.com', 'S3cr3tP@ss', '2025-12-05', '2026-02-27 09:45:00'),
+       ('A004', 'John', 'Doe', 'jdoe99@yahoo.com', 'QwertyUIOP', '2026-01-10', '2026-02-28 08:00:00'),
+       ('A005', 'Emma', 'Watson', 'emma.w@outlook.com', 'Hogw@rts99', '2026-01-22', '2026-02-26 14:20:00'),
+       ('A006', 'Lucas', 'Muller', 'lmuller@bscc.de', 'Bremen2026!', '2026-02-01', '2026-02-28 11:10:00'),
+       ('A007', 'Sophia', 'Chen', 'schen.dev@gmail.com', 'C0d1ng!sFun', '2026-02-10', '2026-02-27 16:55:00'),
+       ('A008', 'Liam', 'Johnson', 'liam.j@hotmail.com', 'L!amJ0hnson', '2026-02-14', '2026-02-28 07:30:00'),
+       ('A009', 'Olivia', 'Davis', 'olivia.davis@gmail.com', '0liviaD@vis', '2026-02-18', '2026-02-25 20:10:00'),
+       ('A010', 'Noah', 'Martinez', 'nmartinez@yahoo.com', 'N0@hM@rt1nez', '2026-02-20', '2026-02-28 09:05:00');
 
 INSERT INTO combo ("comboid", "price")
 VALUES ('CB-GAMER-X', '210.00'),
