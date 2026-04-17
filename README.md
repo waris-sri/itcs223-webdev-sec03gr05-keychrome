@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> # This repo is now deprecated and migrated to this [new repo](https://github.com/MUICT-Class/682-projectphase2-68_section3_group05/tree/main)!
+
+---
+
 # TODO: Add the finished report PDF in the repo!
 
 <div align="center">
