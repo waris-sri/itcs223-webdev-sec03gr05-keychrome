@@ -521,13 +521,19 @@ router.delete('/api/product/:sku', async (req, res) => {
     }
 })
 
+// Replace the bottom of the file with this:
+
 router.use((req, res) => {
     console.log(`Req: ${req.url}`)
     res.status(404).render('pages/404-error.ejs', {
         title: '404! | Keychrome',
     })
 })
+
 module.exports = app;
-app.listen(process.env.PORT, () => {
-    console.log(`Server listening on port: ${process.env.PORT}`)
-})
+
+if (require.main === module) {
+    app.listen(process.env.PORT, () => {
+        console.log(`Server listening on port: ${process.env.PORT}`)
+    })
+}
