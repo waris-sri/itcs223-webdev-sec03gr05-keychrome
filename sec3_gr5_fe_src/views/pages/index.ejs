@@ -65,10 +65,12 @@
     <hr />
     <h2>our bestsellers</h2>
     <section id="our-bestsellers">
-      <a href="/search">
+      <a href="/search?searchRatingAtLeast=0">
         <button type="button" class="primary-btn">
           view all products
-          <i class="fa-solid fa-angle-right"></i></button></a>
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </a>
       <div class="carousel" id="bestsellers-carousel">
         <%- include('../partials/bestseller-list', {products}) %>
       </div>
@@ -111,6 +113,11 @@
         </div>
       </div>
     </section>
+    <hr>
+    <div style="display: flex; flex-direction: column; gap: 16px; width: 100dvw; align-items: center;">
+      <h2>our stores</h2>
+      <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ic9AVCg4sl42kqI3syRMa3AWS0Mtiko&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+    </div>
   </main>
 </body>
 <%- include('../partials/footer') %>

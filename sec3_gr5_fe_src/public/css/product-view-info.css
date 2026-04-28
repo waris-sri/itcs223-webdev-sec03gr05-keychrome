@@ -1,0 +1,119 @@
+/* Product image: full width, responsive */
+.detailed-img {
+  margin-bottom: 1vh;
+  width: 100%;
+  max-width: auto;
+  padding: 0 0 0 0;
+}
+
+/* Product container: single column on mobile, image + details side by side on desktop */
+#product-container {
+  display: grid;
+}
+
+/* Product top section: name, SKU, price, status badges */
+#product-top {
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: start;
+  row-gap: 1vh;
+}
+
+/* Status badge container */
+.conditional-tag {
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+div[data-status="discount-available"] {
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  padding: 3px 5px 3px 5px;
+}
+
+div[data-status="sold-out"] {
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  padding: 3px 5px;
+}
+
+div[data-status="new-arrival"] {
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  padding: 3px 7px 3px 5px;
+}
+
+/* Divider line between sections */
+hr.divider {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 0;
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 1.5vh 0vh 3vh 0vh;
+}
+
+/* Product mid section: specs grid */
+#product-mid {
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: start;
+  row-gap: 2vh;
+  height: fit-content;
+}
+
+/* Individual spec value tag (orange boxes) */
+.product-info {
+  width: fit-content;
+  height: auto;
+  border: 2px solid var(--orange);
+  background-color: var(--white);
+  color: var(--black);
+  padding: 3px 5px 3px 5px;
+  margin-top: 5px;
+}
+
+/* Add to cart row: quantity input + button */
+.product-bottom {
+  margin-top: 0vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 1vw;
+  align-items: center;
+}
+
+/* Quantity input styling */
+.add-to-cart-input {
+  background: var(--pale-gray);
+  border: none;
+  padding: 4px 8px;
+  color: var(--black);
+  width: 100%;
+}
+
+/* Desktop layout: image left, details right */
+@media screen and (min-width: 1024px) {
+  #product-container {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  hr.divider {
+    margin: 0.5vh 0vh 2vh 0vh;
+  }
+
+  .detailed-img {
+    padding: 0 2vw 0 0;
+  }
+
+  .conditional-tag {
+    margin-top: 0vh;
+  }
+}

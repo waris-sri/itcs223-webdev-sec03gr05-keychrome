@@ -1,0 +1,76 @@
+<%- include('../partials/header') %>
+<!-- Header partial: nav, stylesheets, fonts, scripts -->
+
+<!--
+  Page: delete-product
+  Renders a confirmation page before deleting a product
+  Expects: productInfo object (or null), error string (or null) from /manage/delete route
+-->
+
+    <body>
+        <main style=" display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+                padding-top: 10px;">
+            
+            <hgroup>
+                <h1 style="margin-top: 32px; margin-bottom: 32px; color: var(--orange)">Product Management</h1>
+                <h2 style="color: var(--red)">DELETE Product</h2>
+            </hgroup>
+
+            <section style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <!-- Delete form: POSTs SKU to /manage/delete for backend deletion -->
+                <form method="post" action="/manage/delete" class="manage-form">
+    
+                    <% if (error) { %>
+    
+                        <!-- Error state: show message and back button if SKU invalid or not found -->
+                        <p class="body-lg" align="center" style="color: var(--red)">
+                            <%= error %>
+                        </p>
+                        <a href="/manage" style="color: var(--black); text-decoration: none;">
+                            <button type="button" class="primary-btn" style="width: 100%">
+                                <i class="fa-solid fa-arrow-left"></i> Back
+                            </button>
+                        </a>
+    
+                    <% } else { %>
+                        <!-- Confirmation state: show product image and SKU before deletion -->
+                        <div class="label-input-styling">
+                            <p class="body-lg" align="center" style="color: var(--red)">Are you sure you want to delete
+                                the following?</p>
+                            <div class="indicator">
+                                <input required type="text" id="sku" name="sku"
+                                    value="<%= productInfo ? productInfo.sku : '' %>" title="Enter SKU number"
+                                    placeholder="Enter SKU number">
+                            </div>
+                        </div>
+    
+                        <!-- Product image preview: shown if image exists for this product -->
+                        <% if (productInfo && productInfo.image_source) { %>
+                            <div class="label-input-styling">
+                                <label for="productImage"><i class="fa-solid fa-bag-shopping"></i> Product Image</label>
+                                <img id="imagePreview" class="detailed-img"
+                                    src="<%= productInfo && productInfo.image_source ? productInfo.image_source : '' %>"
+                                    alt="<%= productInfo ? productInfo.description : '' %>">
+                            </div>
+                        <% } %>
+    
+                        <!-- Form actions: back to management page or confirm delete -->
+                        <div class="manage-form-buttons">
+                            <a href="/manage" style="text-decoration: none;">
+                                <button type="button" class="primary-btn" style="width: 100%">
+                                    <i class="fa-solid fa-arrow-left"></i> Back
+                                </button>
+                            </a>
+    
+                            <button type="submit" class="danger"><i class="fa-solid fa-trash"></i> Yes, Confirm Delete
+                            </button>
+                        </div>
+                    <% } %>
+    
+                </form>
+            </section>
+        </main>
+    </body>
+
+<!-- Footer partial: footer links -->
+<%- include('../partials/footer') %>

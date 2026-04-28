@@ -1,0 +1,169 @@
+<%- include('../partials/header') %>
+<!-- Header partial: nav, stylesheets, fonts, scripts -->
+
+  <body>
+    <main
+      style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding-top: 10px;">
+
+      <hgroup>
+        <h1 style="margin-top: 32px; margin-bottom: 32px; color: var(--orange)">Product Management</h1>
+        <h2>Add Product</h2>
+      </hgroup>
+
+      <!-- Add product form: POSTS to /manage/add  -->
+      <section style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+
+        <form method="post" action="/manage/add" class="manage-form">
+  
+          <!-- SKU: pre-filled from query param if provided from product management page -->
+          <div class="label-input-styling">
+            <label for="sku"><i class="fa-solid fa-bag-shopping"></i> SKU</label>
+            <div class="indicator">
+              <input type="text" id="sku" name="sku" value="<%= sku %>" title="Enter SKU number"
+                placeholder="Enter SKU number" required>
+            </div>
+          </div>
+  
+          <!-- Product name: auto-generated on backend from series, version, switch, type -->
+          <div class="label-input-styling">
+            <label for="productName"><i class="fa-solid fa-bag-shopping"></i> Product Name</label>
+            <div class="indicator">
+              <input disabled type="text" id="productName" name="productName" value=""
+                title="Auto-generated from various inputs" placeholder="Auto-generated from various inputs">
+            </div>
+          </div>
+  
+          <!-- Product description -->
+          <div class="label-input-styling">
+            <label for="productDescription"><i class="fa-solid fa-bag-shopping"></i> Product Description</label>
+            <div class="indicator">
+              <textarea id="productDescription" name="productDescription" title="Enter product description"
+                placeholder="Enter product description" required></textarea>
+            </div>
+          </div>
+  
+          <!-- Product spec fields: 2 column grid layout -->
+          <fieldset class="manage-form-small">
+            <legend style="color: var(--white);" class="data-tag">Product Specification</legend>
+  
+            <div class="label-input-styling">
+              <label for="amount">Available Stock</label>
+              <div class="indicator">
+                <input type="number" id="amount" name="amount" value="" title="Enter available stock"
+                  placeholder="Enter available stock">
+              </div>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="series">Series</label>
+              <div class="indicator">
+                <input type="text" id="series" name="series" value="" title="Enter series" placeholder="Enter series" required>
+              </div>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="price">Price</label>
+              <div class="indicator">
+                <input type="number" step="0.01" id="price" name="price" value="" title="Enter price" placeholder="Enter price" required>
+              </div>
+            </div>
+  
+            <!-- Product type: dynamically populated from database via /type endpoint -->
+            <div class="label-input-styling">
+              <label for="type">Product Type</label>
+              <select id="type" name="type" required>
+                <option value="" selected>Select Any</option>
+                <% types.forEach(t=> { %>
+                  <option value="<%= t.type %>">
+                    <%= t.type %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="color">Color</label>
+              <div class="indicator">
+                <input type="text" id="color" name="color" value="" title="Enter color" placeholder="Enter color">
+              </div>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="sensor">Sensor</label>
+              <div class="indicator">
+                <input type="text" id="sensor" name="sensor" value="" title="Enter sensor" placeholder="Enter sensor">
+              </div>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="switch">Switch</label>
+              <div class="indicator">
+                <input type="text" id="switch" name="switch" value="" title="Enter switch" placeholder="Enter switch">
+              </div>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="switchtype">Switch Type</label>
+              <div class="indicator">
+                <input type="text" id="switchtype" name="switchtype" value="" title="Enter switch type"
+                  placeholder="Enter switch type">
+              </div>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="version">Version</label>
+              <div class="indicator">
+                <input type="text" id="version" name="version" value="" title="Enter version" placeholder="Enter version">
+              </div>
+            </div>
+  
+            <div class="label-input-styling">
+              <label for="layoutversion">Layout Version</label>
+              <div class="indicator">
+                <input type="text" id="layoutversion" name="layoutversion" value="" title="Enter layout version"
+                  placeholder="Enter layout version">
+              </div>
+            </div>
+  
+  
+          </fieldset>
+  
+          <!-- Boolean flags: discount and new arrival status -->
+          <fieldset class="manage-form-small">
+            <legend style="color: var(--white);" class="data-tag">Product Status</legend>
+  
+            <div class="label-input-styling">
+              <label>
+                <input type="checkbox" name="discountavailable">
+                Discount Available
+              </label>
+            </div>
+  
+            <div class="label-input-styling">
+              <label>
+                <input type="checkbox" name="newarrival">
+                New Arrival
+              </label>
+            </div>
+  
+          </fieldset>
+  
+          <!-- Form actions: back to management page or submit -->
+          <div class="manage-form-buttons" style="margin-top: 3vh">
+            <a href="/manage" style="text-decoration: none;">
+              <button type="button" class="primary-btn" style="width: 100%">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+            </a>
+  
+            <button type="submit" class="cta"><i class="fa-solid fa-plus"></i> Add Product</button>
+          </div>
+  
+        </form>
+      </section>
+    </main>
+
+  </body>
+
+<!-- Footer partial: footer links -->
+<%- include('../partials/footer') %>

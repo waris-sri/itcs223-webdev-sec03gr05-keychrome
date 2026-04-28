@@ -1,11 +1,11 @@
 <div class="product-card">
   <% const img = (product.images && product.images.length > 0)
      ? product.images[0]
-     : 'https://pkihtwrzvtwzmcvyfkka.supabase.co/storage/v1/object/public/product_images/test_image.png';
+     : 'https://placehold.co/400x300?text=No+Image';
   %>
 
   <div class="img-thumbnail" style="background-image: url('<%= img %>'); background-size: cover; background-position: center;">
-    <div><%- include('../partials/product-card-status', { product }) %></div>
+    <div style="position: absolute; top: 0; right: 0; display: flex; flex-direction: column; gap: 2px; align-items: flex-end;"><%- include('../partials/product-card-status', { product }) %></div>
     <span class="corner-sm tl"></span><span class="corner-sm tr"></span>
     <span class="corner-sm bl"></span><span class="corner-sm br"></span>
   </div>

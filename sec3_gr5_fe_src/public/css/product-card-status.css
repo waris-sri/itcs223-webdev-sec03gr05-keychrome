@@ -1,7 +1,4 @@
 div[status]:not([type]) {
-  position: absolute;
-  top: -0.2px;
-  right: -0.2px;
   display: flex;
   justify-content: center;
   align-items: center;

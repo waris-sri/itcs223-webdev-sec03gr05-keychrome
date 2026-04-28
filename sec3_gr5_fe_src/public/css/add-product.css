@@ -1,0 +1,59 @@
+/* Main form container: full width on mobile, capped on larger screens */
+.manage-form {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 1vh;
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .manage-form {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .manage-form {
+    max-width: 50%;
+  }
+}
+
+/* Two column grid for spec fields and boolean flags */
+.manage-form-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1vw;
+  min-width: 100%;
+  padding-top: 1.5vh;
+}
+
+/* Form action buttons: back button narrower, submit wider */
+.manage-form-buttons {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 1vw;
+  min-width: 100%;
+}
+
+/* Textarea: minimum height with vertical resize */
+textarea {
+  min-height: 10vh;
+  resize: vertical;
+}
+
+@media screen and (min-width: 576px) {
+  .manage-form-small {
+    min-width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .manage-form-small {
+    min-width: 50%;
+  }
+}
+
+/* Override global input width for checkboxes */
+input[type="checkbox"] {
+  width: auto;
+}

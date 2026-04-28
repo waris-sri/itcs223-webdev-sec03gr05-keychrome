@@ -20,6 +20,7 @@ html {
   --padding: 64px;
 }
 
+/* For smaller screens */
 @media screen and (max-width: 768px) {
   :root {
     --padding: 32px !important;
@@ -56,6 +57,7 @@ html {
   }
 }
 
+/* For bigger screens */
 @media screen and (min-width: 1024px) {
   :root {
     --padding: 128px;
@@ -176,7 +178,8 @@ label {
 button {
   cursor: pointer;
   color: var(--black);
-  font-family: "Geist",
+  font-family:
+    "Geist",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -190,7 +193,6 @@ button {
     sans-serif;
   font-size: 0.85rem;
 }
-
 
 button.primary-btn {
   border: 0;
@@ -234,7 +236,9 @@ button.round-btn {
   padding: 4px 6px 4px 6px;
   border: 0;
   transform: scale(1);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button.round-btn:hover {
@@ -271,7 +275,8 @@ li,
 ul,
 ol,
 .label {
-  font-family: "Geist",
+  font-family:
+    "Geist",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -367,7 +372,8 @@ h4 {
 }
 
 h5 {
-  font-family: Geist,
+  font-family:
+    Geist,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -389,7 +395,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Tomorrow,
+  font-family:
+    Tomorrow,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -445,7 +452,8 @@ label {
 
 label,
 .body-lg {
-  font-family: Geist,
+  font-family:
+    Geist,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -464,7 +472,8 @@ label,
 
 .stars {
   color: var(--orange);
-  font-family: Geist,
+  font-family:
+    Geist,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -512,4 +521,9 @@ label,
   div {
     scroll-snap-align: center;
   }
+}
+
+input#sku {
+  font-family: 'Geist Mono';
+  font-weight: 400;
 }

@@ -1,0 +1,32 @@
+/* Management action buttons: stacked on mobile, 3 columns on larger screens */
+#manage-buttons {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 1vh;
+  width: 80%;
+}
+
+/* SKU input container */
+#top-sku {
+  margin-top: 6vh;
+  width: 80%;
+}
+
+/* Desktop layout: buttons in a single row */
+@media screen and (min-width: 576px) {
+  #manage-buttons {
+    grid-template-rows: none;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1vw;
+    max-width: 60%;
+  }
+
+  #top-sku {
+    max-width: 60%;
+  }
+
+  #top-sku > label > input {
+    margin-top: 0.5vh;
+  }
+}

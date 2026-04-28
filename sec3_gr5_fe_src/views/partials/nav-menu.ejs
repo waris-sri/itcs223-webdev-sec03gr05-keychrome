@@ -1,5 +1,19 @@
+<% if (!user) { %>
+<!-- Not logged in -->
 <nav id="nav-menu">
   <a href="/members">Team Members</a>
   <br>
   <a href="/admin-login">Administrator Login</a>
 </nav>
+<% } else { %>
+<!-- Logged in -->
+<nav id="nav-menu">
+  <a href="/members">Team Members</a>
+  <br>
+  <a href="/manage">Product Management</a>
+  <br>
+  <a href="/logout">Logout</a>
+  <br>
+  <p style="font-family: 'Geist Mono';">Logged in as: <%= user.email %></p>
+</nav>
+<% } %>

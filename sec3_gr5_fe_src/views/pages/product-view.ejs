@@ -1,11 +1,12 @@
 <%- include('../partials/header') %>
+<!-- Header partial: nav, stylesheets, fonts, scripts -->
 
-<body>
-  <main>
-    <h1>product view</h1>
-    <p>
+  <body>
+    <main>
+      <!-- Product view info partial: renders full product details, expects productInfo object from fe.js -->
       <%- include('../partials/product-view-info', {productInfo}) %>
-    </p>
-  </main>
-</body>
+    </main>
+  </body>
+
+<!-- Footer partial: footer links -->
 <%- include('../partials/footer') %>

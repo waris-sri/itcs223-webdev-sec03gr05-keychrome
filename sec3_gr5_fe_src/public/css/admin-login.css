@@ -1,36 +1,28 @@
+main {
+  padding-bottom: 0;
+}
+
 #form-layout-admin-login {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 16px;
-  padding: 0;
-
   div {
-    height: fit-content;
-    margin-bottom: 0;
-  }
-
-  div.label-input-styling:nth-child(1) {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-
-  div.label-input-styling:nth-child(2) {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-
-  div.label-input-styling:nth-child(3) {
-    grid-area: 2 / 1 / 3 / 3;
-  }
-
-  div.label-input-styling:nth-child(4) {
-    grid-area: 3 / 1 / 4 / 3;
+    margin-bottom: 10px;
   }
 
   button {
-    height: fit-content;
     margin-block: 16px;
     padding: 8px;
-    grid-area: 4 / 1 / 5 / 3;
+    grid-row-start: 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #form-layout-admin-login {
+    width: 373px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #form-layout-admin-login {
+    width: 560px;
   }
 }
 

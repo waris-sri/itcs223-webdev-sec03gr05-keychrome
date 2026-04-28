@@ -2,6 +2,11 @@
 
 <body>
   <main style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding-top: 10px;">
+    <% if (success === false) { %>
+    <script>
+      alert("<%= error %>");
+    </script>
+    <% } %>
     <span class="img-thumbnail" style="width: fit-content; height: fit-content; padding: 8px;">
       <span class="corner-lg tl"></span><span class="corner-lg tr"></span>
       <span class="corner-lg bl"></span><span class="corner-lg br"></span>
@@ -10,21 +15,13 @@
 
     <h1 style="margin-top: 32px; margin-bottom: 32px;">Administrator Login</h1>
 
+    <!-- <% if (success === false) { %>
+    <div style="color: red; margin-bottom: 16px; font-weight: bold;">
+      <%= error %>
+    </div>
+    <% } %> -->
+
     <form method="get" action="/admin-login" id="form-layout-admin-login">
-      <div class="label-input-styling">
-        <label for="firstName"><i class="fa-solid fa-user"></i> First Name</label>
-        <div class="indicator">
-          <input class="admin-login" type="text" id="firstName" name="firstName" value="" title="Enter your first name." placeholder="John" required>
-        </div>
-      </div>
-
-      <div class="label-input-styling">
-        <label for="lastName"><i class="fa-solid fa-user"></i> Last Name</label>
-        <div class="indicator">
-          <input class="admin-login" type="text" id="lastName" name="lastName" value="" title="Enter your last name." placeholder="Doe" required>
-        </div>
-      </div>
-
       <div class="label-input-styling">
         <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
         <div class="indicator">
@@ -38,9 +35,9 @@
           <input class="admin-login" type="password" id="password" value="" name="password" title="Enter the password according to the specifications." minlength="8" maxlength="16" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,16}" required>
         </div>
         <ul>
-          <li>8–16 characters</li>
-          <li>At least 1 uppercase, 1 lowercase, and 1 number</li>
-          <li>Can contain special characters</li>
+          <li>8–16 characters;</li>
+          <li>At least 1 uppercase, 1 lowercase, and 1 number;</li>
+          <li>Can contain special characters.</li>
         </ul>
       </div>
 

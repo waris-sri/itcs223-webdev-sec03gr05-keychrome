@@ -1,31 +1,33 @@
 header {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    align-items: flex-start;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    height: fit-content;
-    padding: calc(var(--padding) / 2) var(--padding) calc(var(--padding) / 2) var(--padding);
-    background: linear-gradient(180deg, #020618 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: flex-start;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: fit-content;
+  padding: calc(var(--padding) / 2) var(--padding) calc(var(--padding) / 2)
+    var(--padding);
+  background: linear-gradient(180deg, #020618 60%, transparent 100%);
 
-    div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-    }
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    header {
-        padding: var(--padding);
-    }
+  header {
+    padding: var(--padding);
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    header {
-        padding: calc(var(--padding) / 4) var(--padding) calc(var(--padding) / 4) var(--padding);
-    }
+  header {
+    padding: calc(var(--padding) / 4) var(--padding) calc(var(--padding) / 4)
+      var(--padding);
+  }
 }

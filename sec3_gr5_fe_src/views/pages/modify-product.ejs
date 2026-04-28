@@ -1,0 +1,189 @@
+<%- include('../partials/header') %>
+<!-- Header partial: nav, stylesheets, fonts, scripts -->
+
+<!--
+  Page: modify-product
+  Renders modify form, pre-populated with existing product data if SKU found
+  Expects: productInfo object (or null), types array from /manage/modify route
+-->
+
+<!-- Construct display name from available fields, empty string if no product loaded -->
+<% let productName='' %>
+<% if (productInfo) { %>
+<% productName=['Keychrome', productInfo.series, productInfo.version, productInfo.switchtype,
+        productInfo.switch, productInfo.type].filter(Boolean).join(" "); %>
+<% } %>
+
+<body>
+  <main style=" display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+                padding-top: 10px;">
+
+    <hgroup>
+      <h1 style="margin-top: 32px; margin-bottom: 32px; color: var(--orange)">Product Management</h1>
+      <h2>Modify Product</h2>
+    </hgroup>
+
+    <section style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+
+      <!-- Modify product form: POSTs to /manage/modify with SKU in body -->
+      <form method="post" action="/manage/modify" class="manage-form">
+
+        <!-- SKU: pre-filled and required -->
+        <div class="label-input-styling">
+          <label for="sku"><i class="fa-solid fa-bag-shopping"></i> SKU Number</label>
+          <div class="indicator">
+            <input type="text" id="sku" name="sku" value="<%= productInfo ? productInfo.sku : '' %>" title="Enter SKU number" placeholder="Enter SKU number" required>
+          </div>
+        </div>
+
+        <!-- Product name: auto-generated from spec fields, pre-filled if product loaded -->
+        <div class="label-input-styling">
+          <label for="productName"><i class="fa-solid fa-bag-shopping"></i> Product Name</label>
+          <div class="indicator">
+            <input disabled type="text" id="productName" name="productName" value=""
+                title="<%= productName ? productName : '' %>, (Auto-generated)" 
+                placeholder="<%= productName ? productName : '' %> (Auto-generated)">
+          </div>
+        </div>
+
+        <!-- Product description -->
+        <div class="label-input-styling">
+          <label for="productDescription"><i class="fa-solid fa-bag-shopping"></i> Product
+            Description</label>
+          <div class="indicator">
+            <textarea id="productDescription" name="productDescription" title="Enter product description" 
+              placeholder="Enter product description" required><%= productInfo ? productInfo.description : '' %></textarea>
+          </div>
+        </div>
+
+        <!-- Product image: shows existing image if available -->
+        <% if (productInfo && productInfo.image_source) { %>
+          <div class="label-input-styling">
+            <label for="productImage"><i class="fa-solid fa-bag-shopping"></i> Product Image</label>
+            <img id="imagePreview" class="detailed-img" src="<%= productInfo.image_source %>" alt="<%= productInfo.description %>">
+          </div>
+        <% } %>
+
+        <!-- Product spec fields: 2 column grid layout, pre-filled if product loaded -->
+        <fieldset class="manage-form-small">
+          <legend style="color: var(--white)" class="data-tag">Product Specification</legend>
+
+          <div class="label-input-styling">
+            <label for="amount">Available Stock</label>
+            <div class="indicator">
+              <input type="number" id="amount" name="amount" value="<%= productInfo ? productInfo.stock_amount : '' %>" title="Enter available stock" placeholder="Enter available stock">
+            </div>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="series">Series</label>
+            <div class="indicator">
+              <input type="text" id="series" name="series" value="<%= productInfo ? productInfo.series : '' %>" title="Enter series" placeholder="Enter series" required>
+            </div>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="price">Price</label>
+            <div class="indicator">
+              <input type="number" step="0.01" id="price" name="price" value="<%= productInfo ? productInfo.price : '' %>" title="Enter price" placeholder="Enter price" required>
+            </div>
+          </div>
+
+          <!-- Product type: dynamically populated from database, pre-selects current type -->
+          <div class="label-input-styling">
+            <label for="type">Product Type</label>
+            <select id="type" name="type" required>
+              <option value="">Select Any</option>
+              <% types.forEach(t=> { %>
+              <option value="<%= t.type %>" <%= productInfo && productInfo.type === t.type ? 'selected' : '' %>>
+                <%= t.type %>
+              </option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="color">Color</label>
+            <div class="indicator">
+              <input type="text" id="color" name="color" value="<%= productInfo ? productInfo.color : '' %>" title="Enter color" placeholder="Enter color">
+            </div>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="sensor">Sensor</label>
+            <div class="indicator">
+              <input type="text" id="sensor" name="sensor" value="<%= productInfo ? productInfo.sensor : '' %>" title="Enter sensor" placeholder="Enter sensor">
+            </div>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="switch">Switch</label>
+            <div class="indicator">
+              <input type="text" id="switch" name="switch" value="<%= productInfo ? productInfo.switch : '' %>" title="Enter switch" placeholder="Enter switch">
+            </div>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="switchtype">Switch Type</label>
+            <div class="indicator">
+              <input type="text" id="switchtype" name="switchtype" value="<%= productInfo ? productInfo.switchtype : '' %>" title="Enter switch type" placeholder="Enter switch type">
+            </div>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="version">Version</label>
+            <div class="indicator">
+              <input type="text" id="version" name="version" value="<%= productInfo ? productInfo.version : '' %>" title="Enter version" placeholder="Enter version">
+            </div>
+          </div>
+
+          <div class="label-input-styling">
+            <label for="layoutversion">Layout Version</label>
+            <div class="indicator">
+              <input type="text" id="layoutversion" name="layoutversion" value="<%= productInfo ? productInfo.layoutversion : '' %>" title="Enter layout version" placeholder="Enter layout version">
+            </div>
+          </div>
+
+
+        </fieldset>
+
+        <!-- Boolean flags: pre-checked based on existing product data -->
+        <fieldset class="manage-form-small">
+          <legend style="color: var(--white)" class="data-tag">Product Status</legend>
+
+          <div class="label-input-styling">
+            <label>
+              <input type="checkbox" name="discountavailable" <%=productInfo &&
+                                        productInfo.discountavailable ? 'checked' : '' %>>
+              Discount Available
+            </label>
+          </div>
+
+          <div class="label-input-styling">
+            <label>
+              <input type="checkbox" name="newarrival" <%=productInfo &&
+                                        productInfo.newarrival ? 'checked' : '' %>>
+              New Arrival
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Form actions: back to management page or submit -->
+        <div class="manage-form-buttons" style="margin-top: 3vh">
+          <a href="/manage" style="text-decoration: none;">
+            <button type="button" class="primary-btn" style="width: 100%">
+              <i class="fa-solid fa-arrow-left"></i> Back
+            </button>
+          </a>
+
+          <button type="submit" class="cta"><i class="fa-solid fa-pencil"></i> Modify Product</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+</body>
+
+<!-- Footer partial: footer links -->
+<%- include('../partials/footer') %>
