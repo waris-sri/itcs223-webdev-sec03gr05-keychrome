@@ -1,5 +1,3 @@
-# TODO: Add the finished report PDF in the repo
-
 <div align="center">
     <img src="sec3_gr5_fe_src/public/img/general/logo-orange.svg" alt="Keychrome Logo" width='auto' height='auto'>
     <br>
@@ -14,6 +12,16 @@
 | Zwe Nyan Zaw         | 6788236 |
 
 </div>
+
+# \*\*Extra-Credit Website Deployment
+
+This is the website link: https://itcs223-webdev-sec03gr05-keychrome.vercel.app/
+
+We deployed the project onto Vercel using Express, one for frontend and one for backend, both of which are created as separate projects.
+
+For reference, this is the backend URL: 
+https://itcs223-webdev-sec03gr05-keychrome-nine.vercel.app/. 
+
 
 # Walk-Through
 
@@ -128,26 +136,6 @@ Next, we will start the web application.
 | `SW-CHY-BRN-35` | Cherry MX Brown switches (35 pcs)        |
 | `SW-GAT-RED-35` | Gateron G Pro Red switches (35 pcs)      |
 | `V1-CUSTOM`     | Wired custom mechanical keyboard         |
-
-# Troubleshooting
-
-## CASE1
-
-1. Lorem ipsum dolor sit amet
-2. Lorem ipsum dolor sit amet
-3. Lorem ipsum dolor sit amet
-
-## CASE2
-
-1. Lorem ipsum dolor sit amet
-2. Lorem ipsum dolor sit amet
-3. Lorem ipsum dolor sit amet
-
-## CASE3
-
-1. Lorem ipsum dolor sit amet
-2. Lorem ipsum dolor sit amet
-3. Lorem ipsum dolor sit amet
 
 # Remarks
 
