@@ -112,7 +112,7 @@ Next, we will start the web application.
 | `warawuth@mu.edu`        | `Passw0rd123!` |
 | `bobby.b@mail.com`       | `M1necr@ftF@n` |
 | `alice.smith@gmail.com`  | `S3cr3tP@ss`   |
-| `jdoe99@yahoo.com`       | `QwertyUIOP`   |
+| `jdoe99@yahoo.com`       | `QwertyUIOP1!` |
 | `emma.w@outlook.com`     | `Hogw@rts99`   |
 | `lmuller@bscc.de`        | `Bremen2026!`  |
 | `schen.dev@gmail.com`    | `C0d1ng!sFun`  |
